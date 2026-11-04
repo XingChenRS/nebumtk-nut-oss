@@ -120,12 +120,27 @@ if (-not (Test-Path (Join-Path $PlatformToolsTarget "adb.exe")) -or
     exit 1
 }
 
-$SakisuSource = Join-Path $Root "sakisu"
-$SakisuTarget = Join-Path (Split-Path $ExePath -Parent) "sakisu"
-if (-not (Test-Path (Join-Path $SakisuSource "official-patcher-windows-x64.exe"))) {
-    Write-Host "sakisu source is missing the reviewed Windows host patcher" -ForegroundColor Red
+# SakiSU is an upstream project (https://github.com/XingChenRS/SakiSU) whose
+# binaries are not redistributed in this repository. The operator fetches the
+# pinned release into material\sakisu with tools/fetch_sakisu.py.
+$SakisuCandidates = @(
+    (Join-Path $Root "material\sakisu"),
+    (Join-Path $Root "sakisu")
+)
+$SakisuSource = $null
+foreach ($Candidate in $SakisuCandidates) {
+    if (Test-Path (Join-Path $Candidate "official-patcher-windows-x64.exe")) {
+        $SakisuSource = $Candidate
+        break
+    }
+}
+if (-not $SakisuSource) {
+    Write-Host "SakiSU host patcher is missing (looked in: $($SakisuCandidates -join ', '))" -ForegroundColor Red
+    Write-Host "  SakiSU is an upstream project: https://github.com/XingChenRS/SakiSU (v4.3.0-sakisu.1)" -ForegroundColor Yellow
+    Write-Host "  Run: python tools\fetch_sakisu.py --apk <SakiSU.apk> --host <ksud.exe>" -ForegroundColor Yellow
     exit 1
 }
+$SakisuTarget = Join-Path (Split-Path $ExePath -Parent) "sakisu"
 if (Test-Path $SakisuTarget) {
     Remove-Item $SakisuTarget -Recurse -Force
 }

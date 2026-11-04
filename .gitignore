@@ -49,6 +49,12 @@ local-dev/
 .private/
 server-data/
 sakisu_sources/
+
+# SakiSU is an upstream project (github.com/XingChenRS/SakiSU). Only our own
+# hash-pinned manifests are tracked here; its binaries are fetched into
+# material/sakisu by tools/fetch_sakisu.py.
+sakisu/*
+!sakisu/*manifest.json
 .build-log.txt
 
 # Local secrets and signing material

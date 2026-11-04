@@ -26,6 +26,15 @@ def test_reviewed_windows_host_identity_and_interface_are_exact() -> None:
         load_imported_host_patcher,
     )
 
+    from nebumtk_unlock_tools.sakisu.locations import (
+        ASSET_HOST,
+        missing_assets_message,
+        sakisu_dir,
+    )
+
+    directory = sakisu_dir(ROOT, needs=ASSET_HOST)
+    if not (directory / "official-patcher-windows-x64.exe").is_file():
+        pytest.skip(missing_assets_message(directory))
     snapshot, manifest = load_imported_host_patcher(ROOT)
 
     assert OFFICIAL_WINDOWS_HOST.source_commit == "6f9672837b9359f8853f47e18e00261edbf6d31e"
@@ -77,7 +86,16 @@ def test_windows_host_loader_rejects_every_asset_mutation(
 ) -> None:
     from nebumtk_unlock_tools.sakisu.host_importer import load_imported_host_patcher
 
-    shutil.copytree(ROOT / "sakisu", tmp_path / "sakisu")
+    from nebumtk_unlock_tools.sakisu.locations import (
+        ASSET_HOST,
+        missing_assets_message,
+        sakisu_dir,
+    )
+
+    source = sakisu_dir(ROOT, needs=ASSET_HOST)
+    if not (source / "official-patcher-windows-x64.exe").is_file():
+        pytest.skip(missing_assets_message(source))
+    shutil.copytree(source, tmp_path / "sakisu")
     if mutation == "binary":
         path = tmp_path / "sakisu" / "official-patcher-windows-x64.exe"
         path.write_bytes(path.read_bytes() + b"tampered")

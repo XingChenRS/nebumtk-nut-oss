@@ -197,6 +197,15 @@ def test_importer_rejects_every_identity_boundary(tmp_path: Path, failure: str) 
 
 
 def test_committed_android_patcher_matches_import_manifest() -> None:
+    from nebumtk_unlock_tools.sakisu.locations import (
+        ASSET_ARM64,
+        missing_assets_message,
+        sakisu_dir,
+    )
+
+    store = sakisu_dir(PROJECT_ROOT, needs=ASSET_ARM64)
+    if not (store / ASSET_ARM64).is_file():
+        pytest.skip(missing_assets_message(store))
     from nebumtk_unlock_tools.sakisu.importer import OFFICIAL_APK, load_imported_patcher
 
     snapshot, manifest = load_imported_patcher(PROJECT_ROOT)

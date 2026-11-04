@@ -11,6 +11,12 @@ from unittest.mock import ANY
 
 import pytest
 
+from nebumtk_unlock_tools.sakisu.locations import (
+    ASSET_HOST,
+    missing_assets_message,
+    sakisu_dir,
+)
+
 from nebumtk_unlock_tools.core.errors import FlowCancelledError, VerificationError
 from nebumtk_unlock_tools.core.adb import AdbClient
 from nebumtk_unlock_tools.core.operation_files import VerifiedFileSnapshot, snapshot_regular_file
@@ -18,6 +24,17 @@ from nebumtk_unlock_tools.core.runner import CommandResult
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+_STORE = sakisu_dir(PROJECT_ROOT, needs=ASSET_HOST)
+
+
+@pytest.fixture(autouse=True)
+def requires_the_sakisu_upstream_store() -> None:
+    """These cases execute the real upstream patcher (see docs/MATERIAL.md)."""
+
+    if not (_STORE / ASSET_HOST).is_file():
+        pytest.skip(missing_assets_message(_STORE))
+
 
 
 def _align(value: int, alignment: int) -> int:

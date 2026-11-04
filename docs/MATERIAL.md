@@ -25,7 +25,31 @@ material/
     verify-private.pem         # Xingc 签名私钥
     verify-public.avbpub       # 与私钥配套的 AVB public key blob（520 字节）
     patch-catalog.json         # 已审核的 LK 补丁目录
+  sakisu/                      # 上游项目 SakiSU 的产物（见第 3.3 节）
+    official-patcher-arm64
+    official-patcher-manifest.json
+    official-patcher-windows-x64.exe
+    official-patcher-windows-x64-manifest.json
 ```
+
+### 2.1 SakiSU（上游项目，不分发）
+
+SakiSU 不是本仓库的一部分：<https://github.com/XingChenRS/SakiSU>，引用版本
+`v4.3.0-sakisu.1`。仓库里只保留我们自己的哈希清单（`sakisu/*manifest.json`），二进制
+由 `tools/fetch_sakisu.py` 拉进 `material/sakisu/`：
+
+```powershell
+# 从上游 release 下载官方 APK 并解出 arm64 patcher
+python tools\fetch_sakisu.py --download
+# 或者交给它本地已有的文件
+python tools\fetch_sakisu.py --apk SakiSU_v4.3.0-sakisu.1_35039-arm64-v8a-release.apk --host ksud.exe
+# 校验现有 store（打印 size + SHA-256 + 上游 tag）
+python tools\fetch_sakisu.py --check
+```
+
+也可以用 `NUT_SAKISU_HOME` 指向一个现成的 SakiSU 目录。查找顺序：
+`NUT_SAKISU_HOME` → `<项目根>/sakisu`（打包产物会把 store 放在 exe 旁边）→
+`<material>/sakisu`。缺产物时流程以 `VerificationError` 失败，消息里带上游链接。
 
 `material/payloads/manifest.json` 的形状：
 

@@ -100,6 +100,18 @@ store；没有 store 就跳过并给出黄色提示。
 - 分发目录审计禁止明文 payload、Xingc 私密材料、调试符号与壳中间物。
 - 工具只应作用于你自己拥有或已获授权的设备。
 
+## 上游项目：SakiSU
+
+SakiSU 是另一个独立项目：<https://github.com/XingChenRS/SakiSU>（引用
+`v4.3.0-sakisu.1`）。本仓库**不再分发它的二进制**，只保留自己的哈希清单
+`sakisu/*manifest.json` 作为索引，产物由操作者拉取：
+
+```powershell
+python tools\fetch_sakisu.py --download          # 官方 APK -> material/sakisu
+python tools\fetch_sakisu.py --apk <apk> --host <ksud.exe>
+python tools\fetch_sakisu.py --check
+```
+
 ## 许可
 
 代码以 MIT 发布，见 [LICENSE](LICENSE)。第三方组件与不随仓库分发的厂商素材另见

@@ -73,7 +73,7 @@ def test_kernel_release_rejects_ambiguous_or_oversized_output(
         lambda *_args, **_kwargs: CommandResult(0, stdout, ""),
     )
 
-    with pytest.raises(AdbError, match="kernel|release|鍐呮牳|鐗堟湰"):
+    with pytest.raises(AdbError, match="kernel|release|内核|版本"):
         adb.kernel_release()
 
 

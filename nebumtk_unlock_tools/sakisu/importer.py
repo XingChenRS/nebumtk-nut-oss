@@ -301,14 +301,20 @@ def import_official_apk(
 
 
 def load_imported_patcher(project_root: Path) -> tuple[VerifiedFileSnapshot, dict[str, object]]:
-    directory = Path(project_root) / "sakisu"
+    from .locations import missing_assets_message, sakisu_dir
+
+    directory = sakisu_dir(project_root, needs=_PATCHER_FILE)
     patcher = directory / _PATCHER_FILE
     manifest_path = directory / _MANIFEST_FILE
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
-        raise VerificationError("official SakiSU import manifest is missing or invalid") from exc
-    expected = _manifest(OFFICIAL_APK, _verify_elf_interface(patcher.read_bytes(), OFFICIAL_APK))
+        raise VerificationError(missing_assets_message(directory)) from exc
+    try:
+        raw = patcher.read_bytes()
+    except OSError as exc:
+        raise VerificationError(missing_assets_message(directory)) from exc
+    expected = _manifest(OFFICIAL_APK, _verify_elf_interface(raw, OFFICIAL_APK))
     if manifest != expected:
         raise VerificationError("official SakiSU import manifest identity mismatch")
     size = patcher.stat().st_size

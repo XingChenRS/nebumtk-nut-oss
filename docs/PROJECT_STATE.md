@@ -86,11 +86,12 @@ python tools\audit_distribution.py dist\nebumtk_unlock_tools.dist
 
 - 2026-07 泄漏事件按完全公开处理：曾出现在闭源树里的密钥与 payload 材料不能再当秘密。
   开源版因此不携带它们，也不再假装客户端能守住它们。
-- `sakisu/` 与 `misc/` 里的二进制/镜像随仓库分发（第三方/厂商内容，见 `NOTICE.md`）。
-  若要彻底"只发代码"，把它们移成操作者素材并同步改审计与测试。
+- `misc/` 里的品牌 bootloader 镜像随仓库分发（owner 决定保留；厂商内容见
+  `NOTICE.md`）。
+- `sakisu/` 只保留我们的哈希清单，SakiSU 的二进制由操作者用
+  `tools/fetch_sakisu.py` 拉进 `material/sakisu/`。本机已按该布局放好，测试会用到。
 - Honor reserve-LK 释放与 SakiSU 单槽 boot 试跑仍未做真机验收。
 
 ## Next decisions
 
-- 是否把 `sakisu/`、`misc/` 移出仓库（改由操作者提供）。
 - 真机验收排期。

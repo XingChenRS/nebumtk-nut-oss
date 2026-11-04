@@ -222,7 +222,9 @@ def import_reviewed_host_patcher(
 def load_imported_host_patcher(
     project_root: Path,
 ) -> tuple[VerifiedFileSnapshot, dict[str, object]]:
-    directory = Path(project_root) / "sakisu"
+    from .locations import missing_assets_message, sakisu_dir
+
+    directory = sakisu_dir(project_root, needs=_HOST_FILE)
     _validate_directory_entries(directory)
     executable_path = directory / _HOST_FILE
     manifest_path = directory / _HOST_MANIFEST_FILE
@@ -230,9 +232,7 @@ def load_imported_host_patcher(
         value = executable_path.read_bytes()
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
-        raise VerificationError(
-            "official SakiSU Windows patcher assets are missing or invalid"
-        ) from exc
+        raise VerificationError(missing_assets_message(directory)) from exc
     executable = _verify_windows_interface(value, OFFICIAL_WINDOWS_HOST)
     if manifest != _manifest(OFFICIAL_WINDOWS_HOST, executable):
         raise VerificationError("official SakiSU Windows patcher manifest mismatch")
