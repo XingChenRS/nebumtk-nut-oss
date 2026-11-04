@@ -8,7 +8,15 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 
+SETTINGS_DIR_ENV = "NEBUMTK_SETTINGS_DIR"
+
+
 def _default_settings_dir() -> Path:
+    # An explicit directory wins so tests and portable runs never read (or
+    # write) the operator's real settings.json.
+    configured = os.environ.get(SETTINGS_DIR_ENV, "").strip()
+    if configured:
+        return Path(configured).expanduser()
     appdata = os.environ.get("APPDATA")
     if appdata:
         return Path(appdata) / "NEBUMTK"
