@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Contract for the open-source material layer.
 
 The closed release gated every protected resource behind an access password.

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Resolve adb/fastboot from Android SDK platform-tools (single directory)."""
 
 from __future__ import annotations

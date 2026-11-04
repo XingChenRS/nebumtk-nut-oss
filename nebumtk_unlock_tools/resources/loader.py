@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Resource loading for device profiles."""
 
 from __future__ import annotations

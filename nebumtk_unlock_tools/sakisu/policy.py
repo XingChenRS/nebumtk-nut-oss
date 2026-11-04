@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Typed source authorization for SakiSU patch-only candidate generation."""
 
 from __future__ import annotations

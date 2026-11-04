@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Off-GUI immutable local-file snapshot worker."""
 
 from __future__ import annotations

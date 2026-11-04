@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Diagnostic-only policy for the bundled ADB/Fastboot terminal."""
 
 from __future__ import annotations

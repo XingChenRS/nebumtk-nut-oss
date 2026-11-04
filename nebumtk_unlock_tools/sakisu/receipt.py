@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Typed, secret-free SakiSU patch-only receipt."""
 
 from __future__ import annotations

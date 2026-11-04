@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """One-shot deterministic migration from reviewed legacy profile files.
 
 This is kept as maintenance evidence for the initial five-table catalog; it is

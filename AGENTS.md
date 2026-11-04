@@ -31,6 +31,10 @@
   `material/` 读，缺了报 `MaterialError` 并给出路径。
 - **没有壳。** 构建链只有 Nuitka；VMProtect、receipt、加壳后审计都不是本仓库的一部分。
   发行目录审计仍然拒绝 `.vmp`/`.map`/`.pdb`/`*.vmp.exe`。
+- **许可固定为 AGPL-3.0-only。** 不要改成 MIT/Apache/BSD，也不要加"或更高版本"；
+  新文件首行带 `SPDX-License-Identifier: AGPL-3.0-only`；引入依赖前先确认它能并入
+  AGPL（Qt/PySide6 是 LGPL-3，只允许动态链接）。第三方 vendor 代码保留原许可，不贴
+  本项目头。
 - 仓库不携带厂商素材：无 LK 镜像、无明文 payload、无 Xingc 私钥、无机型固件。
 - 不提供持久 Root 管理：无 KernelSU/SakiSU/Magisk 管理器、无 `libksud.so`、无 root
   控制台。唯一例外是 `init_boot` 的 SakiSU 镜像补丁边界和可选的 Vivo 原槽写入，

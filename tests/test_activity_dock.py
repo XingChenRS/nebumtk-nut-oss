@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """The right-hand dock must always be reachable, in both directions.
 
 Two defects are pinned here.

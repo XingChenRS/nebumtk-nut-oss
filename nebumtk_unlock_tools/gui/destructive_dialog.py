@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """One complete confirmation immediately before a destructive device action."""
 
 from __future__ import annotations

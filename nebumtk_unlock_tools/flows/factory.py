@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Flow factory."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Secret-free structural contracts for generic local operations."""
 
 from __future__ import annotations

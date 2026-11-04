@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Compile the reviewed maintainer catalog into the legacy runtime YAML."""
 
 from __future__ import annotations

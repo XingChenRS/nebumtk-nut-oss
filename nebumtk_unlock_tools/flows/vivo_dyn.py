@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Local Vivo dyn capture/restore service with no protected operation path."""
 
 from __future__ import annotations

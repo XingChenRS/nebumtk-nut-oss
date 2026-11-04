@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Bounded numeric parsers for untrusted device command output."""
 
 from __future__ import annotations

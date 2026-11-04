@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Internal Vivo Xingc authorization service."""
 
 from __future__ import annotations

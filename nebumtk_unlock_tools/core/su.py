@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Validated privilege providers for rooted ADB operations."""
 
 from __future__ import annotations

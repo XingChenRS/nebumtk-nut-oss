@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Typed orchestration for one official SakiSU patch-only operation."""
 
 from __future__ import annotations

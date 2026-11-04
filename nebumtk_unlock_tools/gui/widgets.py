@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Small dependency-light widgets shared by workbench pages."""
 
 from __future__ import annotations

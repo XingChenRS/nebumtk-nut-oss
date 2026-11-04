@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Generate and verify the signed embedded device catalog."""
 
 from __future__ import annotations

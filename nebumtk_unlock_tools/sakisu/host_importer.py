@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Pinned importer for the reviewed Windows x64 SakiSU host patcher."""
 
 from __future__ import annotations

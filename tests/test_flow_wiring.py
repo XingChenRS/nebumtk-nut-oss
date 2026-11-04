@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """UI-to-backend flow wiring contract.
 
 A UI action must never name a flow kind the factory cannot build.  This guard

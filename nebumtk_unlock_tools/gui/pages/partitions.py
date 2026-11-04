@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Partition inventory, selection backup, and an operator-built operation list.
 
 The page is deliberately one screen with two tables:

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Dependency-light typed presentation contracts for the shell."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Partition backup, setrw, and dd operations (adb+root phase only)."""
 
 from __future__ import annotations

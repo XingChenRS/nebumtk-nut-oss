@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Typed worker adapter for local Vivo dyn operations."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Build-time product channel.
 
 This repository is a fixed Offline Utility product. There is no online

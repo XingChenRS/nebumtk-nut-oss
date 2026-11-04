@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Payload-source lookup for tests.
 
 Device payloads are operator material: they live under ``preloads/<id>/preload.so``

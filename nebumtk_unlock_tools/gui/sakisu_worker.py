@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Off-GUI-thread adapter for the typed SakiSU patch-only flow."""
 
 from __future__ import annotations

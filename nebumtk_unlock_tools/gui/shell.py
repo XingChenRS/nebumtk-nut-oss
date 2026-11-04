@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Dependency-light responsive shell for the task workbench."""
 
 from __future__ import annotations

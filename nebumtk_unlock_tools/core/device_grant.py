@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Canonical device challenge and one-shot preload grant wire format."""
 
 from __future__ import annotations

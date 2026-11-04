@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Internal validated UBL patch service."""
 
 from __future__ import annotations

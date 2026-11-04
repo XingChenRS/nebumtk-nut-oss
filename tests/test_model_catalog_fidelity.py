@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """The five-table template must reproduce the shipped device catalog.
 
 ``model_catalog.yaml`` is the maintainer source for ``devices.yaml``, which is

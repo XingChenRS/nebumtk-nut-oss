@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Shared semantic theme for the workbench and its dialogs."""
 
 from __future__ import annotations

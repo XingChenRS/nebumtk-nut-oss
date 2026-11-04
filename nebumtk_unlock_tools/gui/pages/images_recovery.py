@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Local LK, SakiSU and Vivo Dyn image tasks."""
 
 from __future__ import annotations

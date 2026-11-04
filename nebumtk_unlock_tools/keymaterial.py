@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Local material lookup for the open-source build.
 
 The closed release derived every key from an operator-typed access password and

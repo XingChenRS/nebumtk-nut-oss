@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Device connection, reboot and bounded diagnostics page."""
 
 from __future__ import annotations

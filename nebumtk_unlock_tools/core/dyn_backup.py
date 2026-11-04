@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Verified Vivo dyn preservation through an already-existing root shell."""
 
 from __future__ import annotations

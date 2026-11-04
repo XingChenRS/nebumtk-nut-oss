@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Build protected Android preload wrappers into the local material store.
 
 The closed release embedded the wrappers and the RSA unwrap key inside the

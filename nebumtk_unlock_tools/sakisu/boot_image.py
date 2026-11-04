@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Classifier and structural verifier for SakiSU boot/init_boot images."""
 
 from __future__ import annotations

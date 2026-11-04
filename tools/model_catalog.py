@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Strict maintainer-side five-table model catalog compiler.
 
 The compiler is deliberately build-time only.  It expands reviewed references

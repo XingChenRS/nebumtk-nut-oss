@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """The 「准备解锁」 row writes the inactive slot, and says so per brand.
 
 Two defects are pinned here.

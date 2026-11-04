@@ -10,6 +10,11 @@ Last reconciled: 2026-11-04 (open-source conversion).
 
 另一个 baseline 在 `baseline/1.1`（tag `v1.1.0`），对应最后实际发货的离线 1.1。
 
+## Licensing
+
+代码以 **AGPL-3.0-only** 发布（`LICENSE`，全文取自 FSF/SPDX 原文）；第三方组件的许可以
+及 Qt 只能动态链接的约束见 `NOTICE.md`。这条许可不随分支变化，1.1 与 2.0 相同。
+
 ## What this is
 
 一个纯本地的 Windows 产品：MediaTek v6 bootloader 解锁 + 通用分区备份/还原 + 品牌流程，

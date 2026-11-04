@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Model-pack preload unwrap support for the offline product.
 
 A signed model pack may ship its own encrypted payload wrappers. The pack body

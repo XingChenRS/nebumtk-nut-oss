@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Active/inactive slot helpers."""
 
 from __future__ import annotations

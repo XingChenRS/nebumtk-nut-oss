@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Device detection and model matching."""
 
 from __future__ import annotations

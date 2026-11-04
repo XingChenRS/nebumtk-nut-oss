@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Right-side device inspector, operation state and expandable activity log."""
 
 from __future__ import annotations

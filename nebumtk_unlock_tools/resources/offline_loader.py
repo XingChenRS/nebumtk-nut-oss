@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Protected preload resolution for the offline product."""
 
 from __future__ import annotations

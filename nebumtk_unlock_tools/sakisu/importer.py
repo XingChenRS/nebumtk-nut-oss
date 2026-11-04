@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Strict importer for the reviewed official SakiSU Android arm64 patcher."""
 
 from __future__ import annotations

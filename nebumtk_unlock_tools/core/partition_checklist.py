@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Operator-built partition checklist.
 
 The two transports are deliberately different, because the hardware is:

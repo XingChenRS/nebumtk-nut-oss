@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Transport-aware background worker for explicit device reboot actions."""
 
 from __future__ import annotations

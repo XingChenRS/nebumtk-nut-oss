@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Windows-native adapter for the reviewed SakiSU ksud boot patcher."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Capability reachability contract.
 
 A UI action gated on a capability is dead unless some device in the shipped

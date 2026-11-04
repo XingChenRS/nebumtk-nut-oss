@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Import local Xingc key material into the material root.
 
 The closed release encrypted four resources under a password-derived key and

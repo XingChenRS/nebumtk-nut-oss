@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Dual-slot LK sync is offered per brand, and only in the right direction.
 
 A brand whose unlock cannot put the original LK back (Vivo via `xingc`, Honor

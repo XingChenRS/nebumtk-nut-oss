@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Task-oriented pages and compatibility class exports."""
 
 from .common import DestructiveSummary, OFFICIAL_KMIS

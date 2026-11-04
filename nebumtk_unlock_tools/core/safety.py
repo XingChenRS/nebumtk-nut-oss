@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Safety checks and preflight validation."""
 
 from __future__ import annotations

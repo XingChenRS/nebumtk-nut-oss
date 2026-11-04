@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Explicit manual KMI selection for the official SakiSU patcher."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Validate the fixed-format Vivo misc image used for post-unlock data wipe."""
 
 from __future__ import annotations

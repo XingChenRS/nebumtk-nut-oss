@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Fail a release build if protected sources or release files are invalid."""
 
 from __future__ import annotations

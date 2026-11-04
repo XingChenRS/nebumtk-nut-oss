@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Typed destructive UI request bound to immutable local-file facts."""
 
 from __future__ import annotations

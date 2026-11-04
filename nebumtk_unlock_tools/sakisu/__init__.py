@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Official SakiSU 4.3 patch-only support."""
 
 from .boot_image import (

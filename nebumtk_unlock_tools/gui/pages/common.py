@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Common page layout helpers and compatibility presentation values."""
 
 from __future__ import annotations

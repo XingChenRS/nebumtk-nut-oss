@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Best-effort native Windows chrome without replacing the non-client area."""
 
 from __future__ import annotations

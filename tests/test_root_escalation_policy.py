@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Escalation policy: what a failed root check is allowed to conclude.
 
 `su -c id` fails in more than one way, and they call for different responses.  A
