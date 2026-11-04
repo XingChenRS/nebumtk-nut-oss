@@ -165,26 +165,35 @@ class ResourceLoader:
         return path
 
     def materialize_sakisu_patcher(self, destination: Path) -> Path:
-        """Copy the operator's SakiSU host patcher next to the operation."""
+        """Copy the operator's SakiSU host patcher next to the operation.
+
+        SakiSU is an upstream project (https://github.com/XingChenRS/SakiSU) and
+        its binaries are not distributed here; ``tools/fetch_sakisu.py`` puts
+        the pinned release into ``material/sakisu``.
+        """
         import sys
+
+        from ..core.sakisu_locations import (
+            ASSET_HOST,
+            candidate_dirs,
+            missing_assets_message,
+            sakisu_dir,
+        )
 
         destination = Path(destination)
         names = SAKISU_PATCHER_NAMES.get(sys.platform, SAKISU_PATCHER_NAMES["linux"])
-        roots = [material_root(), self.project_root]
+        store = sakisu_dir(self.project_root, needs=ASSET_HOST)
         source: Path | None = None
-        for root in roots:
+        for root in [store, *candidate_dirs(self.project_root)]:
             for name in names:
-                candidate = root / SAKISU_DIR / name
+                candidate = root / name if root.name == SAKISU_DIR else root / SAKISU_DIR / name
                 if candidate.is_file():
                     source = candidate
                     break
             if source is not None:
                 break
         if source is None:
-            raise MaterialError(
-                f"缺少 SakiSU host patcher: {material_root() / SAKISU_DIR / names[0]}"
-                "（把官方 host patcher 放到 material/sakisu/ 或项目根 sakisu/）"
-            )
+            raise MaterialError(missing_assets_message(store))
         try:
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, destination)

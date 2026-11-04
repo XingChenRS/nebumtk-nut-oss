@@ -66,7 +66,7 @@ def test_sakisu_patcher_reports_missing_local_material(
     monkeypatch.setenv("NUT_MATERIAL_ROOT", str(tmp_path / "material"))
 
     loader = ResourceLoader(tmp_path)
-    with pytest.raises(MaterialError, match="SakiSU host patcher"):
+    with pytest.raises(MaterialError, match="SakiSU"):
         loader.materialize_sakisu_patcher(tmp_path / "sakisu-ksud.exe")
 
 

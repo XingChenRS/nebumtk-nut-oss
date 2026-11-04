@@ -79,6 +79,8 @@ python tools\audit_distribution.py dist\nebumtk_unlock_tools.dist
 - 1.1 的 UI 是单文件大布局（`main_window.py` ~86 KB）；不要再往里堆功能，2.0 已把它
   拆成 `gui/pages/*`。
 - `misc/` 里的品牌 bootloader 镜像随仓库分发（厂商内容，见 `NOTICE.md`）。
+- SakiSU 是上游项目（<https://github.com/XingChenRS/SakiSU>），二进制不进仓库；
+  `tools/fetch_sakisu.py` 把 `v4.3.0-sakisu.1` 拉进 `material/sakisu/`。
 
 ## Next decisions
 

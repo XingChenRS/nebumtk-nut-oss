@@ -27,6 +27,20 @@ material/
     patch-catalog.json         # 已审核的 LK 补丁目录
 ```
 
+### 2.1 SakiSU（上游项目，不分发）
+
+SakiSU 不是本仓库的一部分：<https://github.com/XingChenRS/SakiSU>，引用版本
+`v4.3.0-sakisu.1`。host patcher 由 `tools/fetch_sakisu.py` 拉进 `material/sakisu/`：
+
+```powershell
+python tools\fetch_sakisu.py --download
+python tools\fetch_sakisu.py --apk <apk> --host <ksud.exe>
+python tools\fetch_sakisu.py --check
+```
+
+查找顺序：`NUT_SAKISU_HOME` → `<项目根>/sakisu` → `<material>/sakisu`。缺产物时流程
+以 `MaterialError`/`VerificationError` 失败，消息里带上游链接。
+
 `material/payloads/manifest.json` 的形状：
 
 ```json

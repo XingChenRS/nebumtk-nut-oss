@@ -75,6 +75,18 @@ python tools\audit_distribution.py dist\nebumtk_unlock_tools.dist
 .\scripts\package-sfx.ps1        # 可选
 ```
 
+## 上游项目：SakiSU
+
+SakiSU 是另一个独立项目：<https://github.com/XingChenRS/SakiSU>（引用
+`v4.3.0-sakisu.1`）。本仓库**不分发它的二进制**，只按 SHA-256 校验后调用；产物由
+操作者拉取到 `material/sakisu/`：
+
+```powershell
+python tools\fetch_sakisu.py --download          # 官方 APK -> material/sakisu
+python tools\fetch_sakisu.py --apk <apk> --host <ksud.exe>
+python tools\fetch_sakisu.py --check
+```
+
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。第三方组件见 [NOTICE.md](NOTICE.md)。
