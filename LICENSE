@@ -1,21 +1,8 @@
-NEBUMTK Unlock Tools (NEBUMTK / NUT)
 Copyright (c) 2026 雾月星辰 & MLXC <github@XingChenRS>
-Upstream: https://github.com/XingChenRS
-
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU Affero General Public License, version 3 only, as published
-by the Free Software Foundation. It is distributed in the hope that it will be
-useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-Provenance mark: NBMTK-canary-7f3a91c4e8b2d05f
-Removing this notice, the per-file SPDX headers or the provenance marks is not a
-licensed act: section 5 of the licence requires all notices to be kept. See also
-docs/PROVENANCE.md.
-
-The licence text below is reproduced verbatim and unmodified.
-
--------------------------------------------------------------------------------
+Upstream: https://github.com/XingChenRS · Provenance: NBMTK-canary-7f3a91c4e8b2d05f
+Licensed under the GNU Affero General Public License, version 3 only. Per-file
+SPDX headers state the same terms; section 5 of the licence forbids removing
+either. The licence text follows verbatim and unmodified.
 
 GNU AFFERO GENERAL PUBLIC LICENSE
 Version 3, 19 November 2007
