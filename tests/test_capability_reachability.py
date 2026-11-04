@@ -66,3 +66,4 @@ def test_oppo_devices_can_reach_the_oppo_unlock_flow() -> None:
         "OPPO unlock/finalize are gated on `flashing_unlock`; these OPPO records "
         f"lack it and their unlock buttons stay disabled forever: {without}"
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

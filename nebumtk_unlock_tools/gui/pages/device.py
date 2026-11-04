@@ -177,3 +177,4 @@ class DevicePage(QWidget):
             value = value.replace("\r", " ").replace("\n", " ").strip() or "—"
             label.setText(value)
             label.setToolTip(value)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -51,3 +51,4 @@ def test_diagnostic_policy_rejects_injection_and_mutating_commands(
 ) -> None:
     with pytest.raises(VerificationError):
         parse_diagnostic_command(command)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

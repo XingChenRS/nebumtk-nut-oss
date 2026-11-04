@@ -29,3 +29,4 @@ def parse_bounded_uint64_decimal(raw: str, *, error_message: str) -> int:
     if value > UINT64_MAX:
         raise VerificationError(error_message)
     return value
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -188,3 +188,4 @@ class VivoDynFacade:
 def _ensure_not_cancelled(cancelled) -> None:
     if cancelled():
         raise FlowCancelledError("Vivo dyn operation cancelled")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

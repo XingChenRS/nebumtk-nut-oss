@@ -121,3 +121,4 @@ class PatchCatalog:
 
     def patch(self, patch_id: str) -> PatchRecord:
         return self._patches[patch_id]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

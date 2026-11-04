@@ -138,3 +138,4 @@ def test_brand_that_restores_lk_may_only_sync_the_original(
         window.close()
         window.deleteLater()
         app.processEvents()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -314,3 +314,4 @@ def test_raw_image_growth_over_safety_cap_is_rejected(
     with pytest.raises(UblError, match="unsafe LK output size"):
         run_patch(original, output, key, catalog)
     assert not output.exists()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

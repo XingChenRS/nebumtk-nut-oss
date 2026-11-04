@@ -102,3 +102,4 @@ def unwrap_catalog_payload_key(preload_id: str) -> bytearray:
         key[:] = b"\0" * len(key)
         raise CatalogError("机型包 preload 密钥长度无效")
     return key
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

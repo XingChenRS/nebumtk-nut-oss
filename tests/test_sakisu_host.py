@@ -109,3 +109,4 @@ def test_windows_host_loader_rejects_every_asset_mutation(
 
     with pytest.raises(VerificationError):
         load_imported_host_patcher(tmp_path)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

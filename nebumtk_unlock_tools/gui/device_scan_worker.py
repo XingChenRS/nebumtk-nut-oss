@@ -229,3 +229,4 @@ class DeviceScanWorker(QThread):
                     scan_error=str(exc),
                 )
             )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -84,3 +84,4 @@ class DestructiveDialog(QDialog):
     ) -> bool:
         dialog = cls(summary, action_text=action_text, parent=parent)
         return dialog.exec() == QDialog.DialogCode.Accepted
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

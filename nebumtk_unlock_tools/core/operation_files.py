@@ -170,3 +170,4 @@ def _sha256_file(
     if cancelled is not None and cancelled():
         raise FlowCancelledError("local file verification cancelled")
     return digest.hexdigest()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

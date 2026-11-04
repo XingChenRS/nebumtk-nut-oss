@@ -248,3 +248,4 @@ class ImagesRecoveryPage(QWidget):
         self.task_tab_buttons[1].setVisible(dyn_visible)
         if not dyn_visible and self.task_stack.currentIndex() == 1:
             self._set_task(0)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

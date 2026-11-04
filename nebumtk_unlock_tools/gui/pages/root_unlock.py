@@ -454,3 +454,4 @@ class RootUnlockPage(QWidget):
             self.xingc_auth_button,
         ):
             button.setEnabled(xingc_enabled)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -269,3 +269,4 @@ class IntegratedWindowSurface(QFrame):
         layout.setSpacing(0)
         layout.addWidget(self.title_bar)
         layout.addWidget(content, 1)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

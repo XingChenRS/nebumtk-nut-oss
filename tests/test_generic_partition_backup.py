@@ -304,3 +304,4 @@ def test_manifest_v3_records_actual_device_provenance_product_block_time_and_bui
     assert entry["captured_at"] == "2026-08-11T01:02:03Z"
     assert entry["provenance"] == "device-read-unclassified"
     assert "stock" not in json.dumps(manifest).lower()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

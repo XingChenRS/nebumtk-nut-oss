@@ -553,3 +553,4 @@ def test_invalid_custom_su_does_not_block_working_global_su(
     profile.resources["su_path"] = "su"
     assert facade.capture(DynCaptureRequest(_device(), profile)) == "su"
     assert probes == ["su"]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -85,3 +85,4 @@ class SettingsStore:
         tmp = self.path.with_suffix(".tmp")
         tmp.write_text(payload, encoding="utf-8")
         tmp.replace(self.path)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

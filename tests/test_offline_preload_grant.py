@@ -111,3 +111,4 @@ def test_production_sources_have_no_plaintext_preload_key_transport() -> None:
     assert "parse_hex_key" not in wrapper
     assert "<64-hex-key>" not in wrapper
     assert "!parse_device_grant(" in wrapper
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

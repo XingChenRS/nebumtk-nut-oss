@@ -30,3 +30,4 @@ def test_adb_kernel_release_uses_non_root_uname(monkeypatch: pytest.MonkeyPatch)
 
     assert adb.kernel_release() == "5.15.94-android13-9-g123"
     assert calls == [("uname -r", {"root": False, "timeout": 15, "sensitive": True})]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

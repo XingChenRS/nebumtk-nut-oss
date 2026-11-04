@@ -247,3 +247,4 @@ def test_custom_su_is_tried_after_profile_and_global_su_in_emergency_mode(
 
     assert context.su_provider.kind == "custom"
     assert context.su_provider.executable == custom
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

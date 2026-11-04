@@ -183,3 +183,4 @@ def test_a_successful_probe_is_not_retried(monkeypatch: pytest.MonkeyPatch) -> N
 
     assert adb.root_probes == 1
     assert adb.reboots == 0
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

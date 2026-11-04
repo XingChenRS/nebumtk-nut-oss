@@ -199,3 +199,4 @@ def verify_files(
         image_profile=image_profile,
     )
     return report.ok, report.steps
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

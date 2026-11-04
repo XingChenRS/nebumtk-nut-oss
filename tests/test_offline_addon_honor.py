@@ -193,3 +193,4 @@ def test_honor_complete_hands_the_device_back_to_the_original_slot(
         "completion must switch the device back to the original slot"
     )
     assert captured["expected_current_slot"] == "_b"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

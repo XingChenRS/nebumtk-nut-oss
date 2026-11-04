@@ -27,3 +27,4 @@ def resolve_offline_preload(
         wrapper = materialize_wrapper(preload_id)
         unwrap = unwrap_payload_key
     return wrapper, OfflineGrantResponder(preload_id, unwrap)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

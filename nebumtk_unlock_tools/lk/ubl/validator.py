@@ -215,3 +215,4 @@ def validate_output(
             hashlib.sha256(blob).hexdigest()[:16],
         )
     return report
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

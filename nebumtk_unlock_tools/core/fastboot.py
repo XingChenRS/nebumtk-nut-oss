@@ -288,3 +288,4 @@ class FastbootClient:
 
     def reboot_bootloader(self) -> None:
         self.run("reboot", "bootloader", timeout=30, check=False, cancellable=False)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

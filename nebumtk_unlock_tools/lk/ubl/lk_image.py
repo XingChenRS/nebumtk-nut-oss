@@ -112,3 +112,4 @@ def _find_forward(data: bytes, needle: bytes, cursor: int) -> int:
     if offset < 0:
         raise ValueError("failed to locate LK partition data inside the container")
     return offset
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

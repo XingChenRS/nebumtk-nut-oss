@@ -83,3 +83,4 @@ class SafetyChecker:
     def verify_local_file(path: Path, *, step: str) -> int:
         StepVerifier.check_file_size(path, step=step)
         return path.stat().st_size
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

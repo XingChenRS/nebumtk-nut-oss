@@ -16,11 +16,13 @@ Two modes:
     path is clean, 1 on a usage error. It never modifies anything.
 
 Provenance token: NBMTK-canary-7f3a91c4e8b2d05f
+
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -138,8 +140,56 @@ def _read_maybe_binary(path: Path) -> bytes | None:
         return None
 
 
-def scan(target: Path) -> dict[str, object]:
-    evidence: list[dict[str, str]] = []
+STRUCTURAL_MIN_LINE = 24
+STRUCTURAL_MIN_MATCHES = 8
+STRUCTURAL_RATIO = 0.5
+
+
+def _normalise(line: str) -> str:
+    return " ".join(line.split())
+
+
+def _line_digest(line: str) -> str:
+    return hashlib.sha256(line.encode("utf-8")).hexdigest()
+
+
+def reference_lines(root: Path) -> set[str]:
+    """Digests of our own substantive code lines, for structural comparison."""
+    digests: set[str] = set()
+    for path in _first_party_python(root):
+        try:
+            text = path.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        for line in text.splitlines():
+            normalised = _normalise(line)
+            if len(normalised) < STRUCTURAL_MIN_LINE or normalised.startswith("#"):
+                continue
+            digests.add(_line_digest(normalised))
+    return digests
+
+
+def structural_overlap(path: Path, reference: set[str]) -> tuple[int, int]:
+    """(matching substantive lines, distinct substantive lines) for one file."""
+    try:
+        text = path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return 0, 0
+    lines = {
+        _normalise(line)
+        for line in text.splitlines()
+        if len(_normalise(line)) >= STRUCTURAL_MIN_LINE
+        and not _normalise(line).startswith("#")
+    }
+    if not lines:
+        return 0, 0
+    matched = sum(1 for line in lines if _line_digest(line) in reference)
+    return matched, len(lines)
+
+
+def scan(target: Path, *, structural: bool = True) -> dict[str, object]:
+    evidence: list[dict[str, object]] = []
+    reference = reference_lines(ROOT) if structural else set()
     files = [target] if target.is_file() else [
         path for path in target.rglob("*") if path.is_file()
     ]
@@ -161,8 +211,17 @@ def scan(target: Path) -> dict[str, object]:
             text = data.decode("utf-8", errors="replace")
             if re.search(r"SPDX-License-Identifier:\s*(AGPL-3\.0|GPL-3\.0)", text):
                 matched.append("SPDX header")
-        if matched:
-            evidence.append({"path": relative, "markers": matched})
+        entry: dict[str, object] = {"path": relative, "markers": matched}
+        if reference and path.suffix.lower() in SCAN_READ_TYPES:
+            hits, total = structural_overlap(path, reference)
+            ratio = hits / total if total else 0.0
+            if hits >= STRUCTURAL_MIN_MATCHES and ratio >= STRUCTURAL_RATIO:
+                entry["structural_overlap"] = f"{hits}/{total} lines ({ratio:.0%})"
+            elif not matched:
+                continue
+        if not matched and "structural_overlap" not in entry:
+            continue
+        evidence.append(entry)
     return {"target": str(target), "files_scanned": scanned, "evidence": evidence}
 
 
@@ -200,9 +259,13 @@ def main() -> int:
         else:
             print(f"provenance evidence in {len(evidence)} file(s):")
             for entry in evidence:
-                print(f"  {entry['path']}: {', '.join(entry['markers'])}")
+                markers = ", ".join(entry["markers"]) or "-"
+                extra = entry.get("structural_overlap")
+                suffix = f" | structural overlap {extra}" if extra else ""
+                print(f"  {entry['path']}: {markers}{suffix}")
     return 0 if report["evidence"] else 2
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

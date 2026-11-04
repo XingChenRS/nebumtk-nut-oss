@@ -299,3 +299,4 @@ def test_local_lk_build_and_gui_inspect_use_selected_profile(
 
     assert constructor_profiles == ["mt6985_or_lower", "mt6985_or_lower"]
     assert utility_results == [("inspect_lk", (True, "ok"))]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -121,3 +121,4 @@ def _c_string(field: bytes) -> bytes:
     if terminator < 0:
         raise VerificationError("Vivo wipe misc 字段未终止")
     return field[:terminator]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

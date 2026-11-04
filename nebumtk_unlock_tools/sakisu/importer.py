@@ -342,3 +342,4 @@ def validate_imported_patcher(snapshot: VerifiedFileSnapshot) -> None:
     if size != OFFICIAL_APK.patcher_size or digest != OFFICIAL_APK.patcher_sha256:
         raise VerificationError("official SakiSU imported patcher identity mismatch")
     _verify_elf_interface(patcher, OFFICIAL_APK)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

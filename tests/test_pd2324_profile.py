@@ -396,3 +396,4 @@ def test_preload_environment_rejects_loader_override_and_shell_injection(
             trigger_command="/system/bin/id",
             trigger_env=environment,
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

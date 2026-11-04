@@ -22,3 +22,4 @@ def apply_cert_bypass_to_bytes(contents: bytes, mode: str = "override") -> tuple
     region_end = _used_region_end(image)
     output = bytes(image.contents[:region_end])
     return output, signed_partitions
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

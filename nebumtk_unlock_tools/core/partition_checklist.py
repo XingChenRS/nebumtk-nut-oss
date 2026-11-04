@@ -211,3 +211,4 @@ class PartitionChecklistRunner:
             raise VerificationError("擦除只在 Fastboot 下提供")
         self.fastboot.erase_partition(item.partition)
         return f"{item.partition} 已擦除"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

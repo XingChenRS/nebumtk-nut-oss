@@ -78,3 +78,4 @@ def path_row(edit: QLineEdit, browse: QPushButton) -> QWidget:
     row.addWidget(edit, 1)
     row.addWidget(browse)
     return container
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

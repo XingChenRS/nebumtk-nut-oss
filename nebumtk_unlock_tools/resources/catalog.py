@@ -264,3 +264,4 @@ def install_model_pack(source: Path) -> tuple[Path, int]:
         raise CatalogError("机型包写入校验失败")
     pending.replace(target)
     return target, revision
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -587,3 +587,4 @@ def _find_all(data: bytes, needle: bytes) -> list[int]:
             return offsets
         offsets.append(index)
         start = index + 1
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

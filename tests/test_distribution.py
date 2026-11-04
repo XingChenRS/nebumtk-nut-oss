@@ -254,3 +254,4 @@ def test_distribution_audit_requires_the_conveyed_licence(tmp_path: Path) -> Non
 
     with pytest.raises(RuntimeError, match="required file"):
         audit_distribution(tmp_path)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

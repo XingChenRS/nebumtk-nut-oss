@@ -1942,3 +1942,4 @@ def test_finalize_writes_no_init_boot_when_the_option_is_off(
     )
 
     assert ctx.fastboot.partition_flashes == []
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

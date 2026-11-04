@@ -1468,3 +1468,4 @@ def test_sakisu_request_requires_confirmed_source_snapshot(tmp_path: Path) -> No
     assert SakisuPatchRequest(
         source=snapshot_regular_file(source), **kwargs
     ).source.path == source
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -126,3 +126,4 @@ def validate_patch_authorization(
             or rollback.sha256 != source.sha256
         ):
             raise VerificationError("rollback snapshot does not match the immutable source")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -35,3 +35,4 @@ def inspect_cert_status(data: bytes) -> tuple[CertStatus, ...]:
         else:
             statuses.append(CertStatus(partition=name, state="invalid"))
     return tuple(statuses)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

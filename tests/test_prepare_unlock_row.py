@@ -269,3 +269,4 @@ def test_unlock_page_notes_are_owned_by_their_action_row() -> None:
             f"line {number} builds a note in {innermost.name}(); notes must come "
             "from _action_row so that hiding a row hides its explanation"
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

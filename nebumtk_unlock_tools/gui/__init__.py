@@ -5,3 +5,4 @@ from .settings_dialog import SettingsDialog
 from .worker import FlowWorker
 
 __all__ = ["MainWindow", "SettingsDialog", "FlowWorker"]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

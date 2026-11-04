@@ -195,3 +195,4 @@ def test_fastboot_checklist_honors_cancellation(tmp_path: Path, monkeypatch) -> 
             ),
             cancelled=lambda: cancelled["value"],
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

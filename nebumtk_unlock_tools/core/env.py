@@ -69,3 +69,4 @@ class EnvChecker:
         if candidate.is_absolute() or "\\" in path or "/" in path:
             if not candidate.is_file():
                 raise EnvError(f"{name} 不存在: {path}")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

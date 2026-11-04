@@ -174,3 +174,4 @@ class SettingsDialog(QDialog):
             test_mode_enabled=self.test_mode_check.isChecked(),
             custom_su=self._settings.custom_su,
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

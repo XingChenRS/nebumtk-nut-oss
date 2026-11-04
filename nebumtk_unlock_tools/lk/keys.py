@@ -63,3 +63,4 @@ def verify_key_pair() -> None:
     derived = private_key_pem_to_avb_blob(load_private_pem())
     if derived != expected:
         raise ValueError("本地 Xingc 私钥与 AVB public blob 不匹配")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

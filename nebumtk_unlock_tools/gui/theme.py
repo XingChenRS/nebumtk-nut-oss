@@ -235,3 +235,4 @@ def online_stylesheet() -> str:
         QScrollArea { background:#F8F4ED; border:0; }
         QDialogButtonBox QPushButton { min-width:88px; }
     """
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -327,3 +327,4 @@ def test_operation_files_returns_task1_operation_files_with_unique_directories(t
     assert second.directory.name.startswith("patch-lk-")
     assert first.directory.is_dir()
     assert second.directory.is_dir()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

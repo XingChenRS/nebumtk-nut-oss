@@ -124,3 +124,31 @@ def test_provenance_gate_rejects_a_missing_document(tmp_path: Path, name: str) -
 
     violations = audit_provenance.audit_self(tmp_path)
     assert any(name in item for item in violations)
+
+
+def test_structural_scan_catches_a_renamed_copy_without_notices(tmp_path: Path) -> None:
+    """Stripping headers, the token line and the filename still leaves the code."""
+
+    source = ROOT / "nebumtk_unlock_tools" / "lk" / "ubl" / "patcher.py"
+    stripped = [
+        line
+        for line in source.read_text(encoding="utf-8").splitlines()
+        if "SPDX" not in line and "provenance:" not in line
+    ]
+    copied = tmp_path / "generic_patch.py"
+    copied.write_text("\n".join(stripped) + "\n", encoding="utf-8")
+
+    report = audit_provenance.scan(tmp_path)
+    assert report["evidence"], "structural overlap must catch a renamed copy"
+    entry = report["evidence"][0]
+    assert entry["markers"] == []
+    assert "structural_overlap" in entry
+
+
+def test_every_first_party_file_ends_with_the_watermark_line() -> None:
+    for path in audit_provenance._first_party_python(ROOT):
+        text = path.read_text(encoding="utf-8")
+        if not text.strip():
+            continue
+        assert text.rstrip().endswith(nebumtk_unlock_tools.PROVENANCE_TOKEN), path
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

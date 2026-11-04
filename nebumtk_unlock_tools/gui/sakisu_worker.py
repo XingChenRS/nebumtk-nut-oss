@@ -44,3 +44,4 @@ class SakisuPatchWorker(QThread):
             self.cancelled_signal.emit()
         except Exception as exc:
             self.finished_error.emit(str(exc))
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -63,3 +63,4 @@ def _parse_fastboot(args: list[str]) -> list[str]:
     if len(args) == 2 and args[0] == "getvar" and _SAFE_GETVAR.fullmatch(args[1]):
         return args
     raise VerificationError("Fastboot 诊断终端仅允许 devices 或 getvar")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

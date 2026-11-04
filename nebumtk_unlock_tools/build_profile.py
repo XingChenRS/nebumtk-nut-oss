@@ -11,3 +11,4 @@ from __future__ import annotations
 
 BUILD_CHANNEL = "offline"
 CLIENT_VERSION = "2.0.0"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

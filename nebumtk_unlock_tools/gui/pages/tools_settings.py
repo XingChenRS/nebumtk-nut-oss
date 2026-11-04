@@ -93,3 +93,4 @@ class ToolsSettingsPage(QWidget):
             carrier.setVisible(False)
             layout.addWidget(carrier)
         layout.addStretch(1)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

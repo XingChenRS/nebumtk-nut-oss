@@ -140,3 +140,4 @@ def test_xingc_material_is_read_as_plaintext_files(
     (xingc / "protocol-permit").write_bytes(b"not-a-permit")
     with pytest.raises(RuntimeError, match="协议许可验证失败"):
         keys.require_protocol_capability()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

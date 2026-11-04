@@ -97,3 +97,4 @@ def test_template_reproduces_shipped_device_commands() -> None:
         "recompiling model_catalog.yaml would change the commands run on a "
         "device:\n" + "\n".join(problems)
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

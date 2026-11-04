@@ -309,3 +309,4 @@ def write_patch_receipt(path: Path, receipt: PatchReceipt) -> Path:
     except Exception:
         pending.unlink(missing_ok=True)
         raise
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -229,3 +229,4 @@ class ActivityPanel(QFrame):
         else:
             self.progress.setRange(0, 100)
             self.progress.setValue(int(getattr(snapshot, "percent", 0) or 0))
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

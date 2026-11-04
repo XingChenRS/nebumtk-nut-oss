@@ -109,3 +109,4 @@ def test_shell_challenge_exchange_ignores_stderr_challenge_injection(
             lambda _line: "unused",
             timeout=5,
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

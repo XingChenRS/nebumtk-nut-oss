@@ -403,3 +403,4 @@ def compile_catalog_file(source: Path, output: Path) -> None:
         yaml.safe_dump(compile_catalog(source), allow_unicode=True, sort_keys=False),
         encoding="utf-8",
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

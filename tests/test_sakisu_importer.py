@@ -218,3 +218,4 @@ def test_committed_android_patcher_matches_import_manifest() -> None:
     assert manifest["upstream"]["certificate_sha256"] == OFFICIAL_APK.certificate_sha256
     assert manifest["patcher"]["supported_kmis"] == list(OFFICIAL_APK.supported_kmis)
     assert "path" not in json.dumps(manifest, sort_keys=True).casefold()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

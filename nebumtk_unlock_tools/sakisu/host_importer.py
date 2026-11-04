@@ -257,3 +257,4 @@ def validate_imported_host_patcher(snapshot: VerifiedFileSnapshot) -> None:
     if len(value) != snapshot.size or _sha256(value) != snapshot.sha256:
         raise VerificationError("official SakiSU Windows patcher snapshot changed")
     _verify_windows_interface(value, OFFICIAL_WINDOWS_HOST)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

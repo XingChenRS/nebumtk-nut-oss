@@ -221,3 +221,4 @@ def test_catalog_rejects_unknown_reference_and_platform_mismatch() -> None:
     source["devices"]["vivox200"]["payload"] = "oppo_fx9_fx9p_16.0.8.301"
     with pytest.raises(CatalogError, match="platform mismatch"):
         compile_catalog(source)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

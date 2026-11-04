@@ -72,3 +72,4 @@ def public_key_to_avb_blob(public_key: object) -> bytes:
     )
     AvbPublicKeyBlob.from_bytes(blob)
     return blob
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

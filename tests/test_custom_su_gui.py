@@ -24,3 +24,4 @@ def test_settings_dialog_shows_custom_su_as_read_only_advanced_owned_state() -> 
         dialog.close()
         dialog.deleteLater()
         app.processEvents()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

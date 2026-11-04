@@ -402,3 +402,4 @@ def verify_patch_candidate(
         output_size=len(output_bytes),
         output_sha256=output_hash,
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

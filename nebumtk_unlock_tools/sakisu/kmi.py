@@ -27,3 +27,4 @@ def validate_manual_kmi_selection(selection: ManualKmiSelection) -> None:
         raise VerificationError(
             "manual KMI selection requires explicit confirmation that a wrong KMI may prevent boot"
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

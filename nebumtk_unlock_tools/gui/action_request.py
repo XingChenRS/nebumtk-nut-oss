@@ -42,3 +42,4 @@ class DestructiveFlowRequest:
     install_sakisu_root: bool = False
     sakisu_init_boot: Path | None = None
     sakisu_kmi: str = ""
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

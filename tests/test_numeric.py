@@ -36,3 +36,4 @@ def test_bounded_uint64_decimal_rejects_non_ascii_or_out_of_range(raw: str) -> N
 
     with pytest.raises(VerificationError, match="invalid size"):
         parse_bounded_uint64_decimal(raw, error_message="invalid size")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

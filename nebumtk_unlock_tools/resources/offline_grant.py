@@ -98,3 +98,4 @@ class OfflineGrantResponder:
             _wipe(content_key)
             _wipe(shared)
             _wipe(wrapping_key)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

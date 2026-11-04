@@ -112,3 +112,4 @@ def test_dock_can_be_brought_back_out(
         )
     finally:
         _teardown(app, window)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

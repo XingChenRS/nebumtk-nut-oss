@@ -54,3 +54,4 @@ class RestoreReceipt:
             raise ValueError("restore receipt does not contain a complete pair")
         if self.stage not in {"pair-restored", "slot-restored", "reboot-issued"}:
             raise ValueError("restore receipt stage is invalid")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

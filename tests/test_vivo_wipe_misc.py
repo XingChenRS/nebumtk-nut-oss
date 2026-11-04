@@ -76,3 +76,4 @@ def test_rewrite_vivo_wipe_misc_changes_only_target_slot_and_bcb_crc(tmp_path: P
     changed = [index for index, (before, after) in enumerate(zip(source, rewritten)) if before != after]
     assert changed[0] == BCB_OFFSET + 1
     assert set(changed[1:]) <= set(range(BCB_OFFSET + 28, BCB_OFFSET + 32))
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

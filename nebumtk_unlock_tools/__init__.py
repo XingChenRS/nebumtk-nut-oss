@@ -17,10 +17,10 @@ __upstream__ = "https://github.com/XingChenRS"
 # repackaged source tree or a "cleaned" fork can be traced back here. Keep each
 # one on a single line: a split literal is not searchable in the source itself.
 PROVENANCE_MARK = "NEBUMTK-PROVENANCE::AGPL-3.0-only::(c)2026 雾月星辰 & MLXC::github/XingChenRS"
+PROVENANCE_TOKEN = "NBMTK-canary-7f3a91c4e8b2d05f"
 # A deliberately odd, unique token. Searching for it finds copied code even
 # after the headers have been removed; it is repeated in the entry point, the
 # provenance tool, README, LICENSE and docs/PROVENANCE.md for that reason.
-PROVENANCE_TOKEN = "NBMTK-canary-7f3a91c4e8b2d05f"
 
 _LICENSE_BANNER = """
 {mark}
@@ -46,3 +46,4 @@ def check_provenance(text: str) -> bool:
     if not isinstance(text, str):
         return False
     return PROVENANCE_MARK in text and PROVENANCE_TOKEN in text
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

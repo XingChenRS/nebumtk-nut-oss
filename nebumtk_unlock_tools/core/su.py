@@ -101,3 +101,4 @@ def probe_custom_su(adb: _RootShell, executable: str) -> SuProbeResult:
         error_message="custom su fixed id probe failed",
     )
     return SuProbeResult(uid=uid, output=output)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

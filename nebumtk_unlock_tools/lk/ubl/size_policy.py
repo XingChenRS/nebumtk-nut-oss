@@ -113,3 +113,4 @@ def inspect_output_size(
             f"zero_tail={trailing_zeroes} cert2_growth={cert2_growth}"
         ),
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

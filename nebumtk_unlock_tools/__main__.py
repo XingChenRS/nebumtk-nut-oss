@@ -7,6 +7,7 @@ product's observable behaviour, not only of its source: a repackaged build that
 strips them stops being able to answer.
 
 Provenance token: NBMTK-canary-7f3a91c4e8b2d05f
+
 """
 
 from __future__ import annotations
@@ -41,3 +42,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

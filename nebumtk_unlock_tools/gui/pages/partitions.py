@@ -295,3 +295,4 @@ class PartitionToolsPage(QWidget):
                 check.setCheckState(Qt.CheckState.Checked)
             self.set_row_image(row, image)
             return
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

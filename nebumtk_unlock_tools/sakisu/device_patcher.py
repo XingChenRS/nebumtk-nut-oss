@@ -208,3 +208,4 @@ class AndroidDevicePatcher:
             return VerifiedFileSnapshot(destination, candidate.size, candidate.sha256)
         finally:
             pending.unlink(missing_ok=True)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

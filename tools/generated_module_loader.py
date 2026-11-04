@@ -36,3 +36,4 @@ def load_generated_module(module_name: str, source: Path) -> ModuleType:
             sys.modules[module_name] = previous
         raise
     return module
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

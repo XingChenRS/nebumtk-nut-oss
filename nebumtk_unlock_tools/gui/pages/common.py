@@ -61,3 +61,4 @@ class DestructiveSummary:
             f"槽位影响：{self.slot_effect}\n"
             f"取消边界：{self.cancellation_boundary}"
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

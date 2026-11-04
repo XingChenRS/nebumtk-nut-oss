@@ -112,3 +112,4 @@ def schedule_native_window_chrome(
             apply_native_window_chrome(target, appearance)
 
     QTimer.singleShot(0, apply_if_alive)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

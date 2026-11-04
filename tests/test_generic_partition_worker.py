@@ -70,3 +70,4 @@ def test_custom_su_probe_worker_runs_fixed_id_and_returns_typed_result(
         )
     ]
     app.processEvents()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

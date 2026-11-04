@@ -129,3 +129,4 @@ def _replacement_for_patch(patch: PatchRecord, key_blob: bytes) -> bytes:
             raise PatchError(f"key blob must be {patch.replacement_size} bytes")
         return key_blob
     return patch.patch_bytes
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

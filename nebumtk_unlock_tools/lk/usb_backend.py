@@ -107,3 +107,4 @@ def get_libusb_backend() -> Any:
         "设备驱动为 WinUSB/libusbK（可用 Zadig），"
         "或将 libusb-1.0.dll 放在 exe 同目录。"
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

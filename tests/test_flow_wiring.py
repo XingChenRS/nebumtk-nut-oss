@@ -214,3 +214,4 @@ def test_every_click_target_exists_on_the_window() -> None:
     }
     missing = sorted(referenced - defined - externals)
     assert not missing, f"click targets with no handler: {missing}"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

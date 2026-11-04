@@ -324,3 +324,4 @@ class TerminalWorker(QThread):
         try: self.result_ready.emit(run_command(self.command, timeout=180, cancelled=lambda: self._cancelled))
         except FlowCancelledError: self.cancelled_signal.emit()
         except Exception as exc: self.finished_error.emit(str(exc))
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

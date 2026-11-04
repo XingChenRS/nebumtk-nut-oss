@@ -231,3 +231,4 @@ def test_unlock_never_short_circuits_on_a_reported_unlocked_state(monkeypatch) -
 
     assert events == ["open", "token", "download", "command:xingc unlock", "close"]
     assert result.already_unlocked is False
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

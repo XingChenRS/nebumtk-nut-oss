@@ -163,3 +163,4 @@ def test_inventory_does_not_treat_unconfirmed_ab_name_as_a_pair() -> None:
     assert inventory.by_name("init_boot_b").partner is None
     with pytest.raises(VerificationError, match="confirmed A/B pair"):
         inventory.resolve_pair("vendor_boot", "_b")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -389,3 +389,4 @@ class DeviceDetector:
         if firmware and str(firmware) not in device.firmware:
             return False
         return True
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f
