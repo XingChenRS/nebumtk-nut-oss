@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Operator-owned fastboot artifact store.
 
 The closed release carried each artifact (Vivo wipe misc, reserve LK, ...) as

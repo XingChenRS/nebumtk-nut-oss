@@ -23,6 +23,15 @@ Python 3.10+；实际验证环境是 CPython 3.12 + PySide6 6.10.2。
 - 改发行链（`scripts/`、`tools/audit_distribution.py`）时，跑一次
   `python tools/audit_distribution.py <dist>`。
 
+## 许可
+
+本项目是 **AGPL-3.0-only**（见 [LICENSE](LICENSE)、[NOTICE.md](NOTICE.md)）：
+
+- 提交即视为同意以同一许可授权你的贡献（inbound = outbound），不引入额外的 CLA。
+- 新文件第一行写 `# SPDX-License-Identifier: AGPL-3.0-only`；第三方代码放进
+  `native/preload_wrapper/vendor/` 并保留其原始许可，不要给它们贴 AGPL 头。
+- 不要引入只允许宽松再分发、却不能并入 AGPL 作品的依赖。新增依赖前先看它的许可。
+
 ## 不要做的事
 
 - 不要重新引入访问密码或任何密码派生密钥（见 [AGENTS.md](../AGENTS.md)）。

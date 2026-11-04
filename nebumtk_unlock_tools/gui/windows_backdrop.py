@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Best-effort Windows 11 system backdrop support."""
 
 from __future__ import annotations

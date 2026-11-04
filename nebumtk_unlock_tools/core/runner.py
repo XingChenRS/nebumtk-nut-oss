@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Command execution helpers."""
 
 from __future__ import annotations

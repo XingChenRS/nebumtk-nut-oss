@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Single-flight background device discovery for the main window."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Native Fluent-style presentation layer for the NEBUMTK toolbox."""
 
 from __future__ import annotations

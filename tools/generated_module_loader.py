@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Load a generated Python resource from its source bytes, never from ``.pyc``."""
 
 from __future__ import annotations

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Keep the suite off the operator's machine state.
 
 Two pieces of real-machine state used to leak into tests:

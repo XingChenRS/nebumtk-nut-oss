@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Local device-bound grants for protected offline preload execution."""
 
 from __future__ import annotations

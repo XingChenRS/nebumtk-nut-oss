@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Operator-owned protected preload store.
 
 The closed release embedded every encrypted wrapper and the RSA private key

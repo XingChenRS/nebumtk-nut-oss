@@ -11,6 +11,11 @@ Last reconciled: 2026-11-04 (open-source conversion of baseline 1.1).
 它是 2.0（`main`）的前身：`main` 是重构后的 typed-contract 版本。两条线是孤儿分支，
 见 `docs/BASELINES.md`。
 
+## Licensing
+
+代码以 **AGPL-3.0-only** 发布（`LICENSE` 为 FSF/SPDX 原文）；第三方组件许可与"Qt 只能
+动态链接"的约束见 `NOTICE.md`。
+
 ## What this is
 
 一个纯本地的 Windows 产品：MediaTek v6 bootloader 解锁 + 分区备份/还原 + 品牌流程，

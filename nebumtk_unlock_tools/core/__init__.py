@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 from .adb import AdbClient
 from .device import ConnectedDevice, DeviceDetector, DeviceProfile
 from .env import EnvChecker, ToolPaths

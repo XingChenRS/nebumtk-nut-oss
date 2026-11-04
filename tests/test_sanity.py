@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Focused sanity tests for the session-free core boundary."""
 
 from __future__ import annotations

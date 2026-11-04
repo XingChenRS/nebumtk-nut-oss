@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Settings dialog."""
 
 from __future__ import annotations

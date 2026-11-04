@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Console smoke test for frozen-style startup."""
 
 from __future__ import annotations

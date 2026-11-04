@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Best-effort Vivo dyn preservation using an already-authorized root shell.
 
 This module never invokes the temporary preload escalation route.  Capture runs

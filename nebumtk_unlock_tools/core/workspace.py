@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Workspace file-service boundary."""
 
 from __future__ import annotations

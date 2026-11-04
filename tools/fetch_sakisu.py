@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Place the pinned SakiSU upstream host patcher in the local material root.
 
 SakiSU is a separate project (https://github.com/XingChenRS/SakiSU) and this

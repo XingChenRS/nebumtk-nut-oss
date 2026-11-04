@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Where the SakiSU upstream assets live.
 
 SakiSU is a separate project (https://github.com/XingChenRS/SakiSU); its

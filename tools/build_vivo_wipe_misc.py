@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Derive the target-B Vivo wipe misc from the reviewed target-A seed."""
 
 from __future__ import annotations

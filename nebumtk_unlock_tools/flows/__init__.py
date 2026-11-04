@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 from .base import FlowCallbacks, FlowContext
 from .factory import FASTBOOT_FLOWS, create_flow
 from .stages import (

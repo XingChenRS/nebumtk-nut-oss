@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Local Xingc key and capability material.
 
 The closed release decrypted these from password-derived ciphertext embedded in

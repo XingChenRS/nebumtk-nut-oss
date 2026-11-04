@@ -1,7 +1,9 @@
 [project]
 name = "nebumtk-unlock-tools"
 version = "1.1.0"
-description = "NEBUMTK Bootloader unlock tool for MediaTek v6 devices"
+description = "NEBUMTK Bootloader unlock tool for MediaTek v6 devices (open source)"
+license = { text = "AGPL-3.0-only" }
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = [
     "PySide6==6.10.2",

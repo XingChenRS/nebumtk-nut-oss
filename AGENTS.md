@@ -31,6 +31,9 @@ Python/PySide6 应用，Nuitka standalone 分发。**无服务端、无账号、
   发行目录审计仍拒绝 `.vmp`/`.map`/`.pdb`/`*.vmp.exe`。
 - **没有在线通道。** 不要恢复 `nebumtk_unlock_tools/online/`、登录对话框或
   `NEBUMTK_CHANNEL` 环境开关；`build_profile` 只有 `offline`。
+- **许可固定为 AGPL-3.0-only。** 不要改成 MIT/Apache/BSD，也不要加"或更高版本"；
+  新文件首行带 `SPDX-License-Identifier: AGPL-3.0-only`；引入依赖前先确认它能并入
+  AGPL（Qt/PySide6 是 LGPL-3，只允许动态链接）。第三方 vendor 代码保留原许可。
 - 仓库不携带厂商素材：无 LK 镜像、无明文 payload、无 Xingc 私钥、无机型固件、无
   SakiSU patcher。
 - 不提供持久 Root 管理：无 KernelSU/SakiSU/Magisk 管理器、无 `libksud.so`、无 root

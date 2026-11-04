@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Pinned metadata for the constrained offline SakiSU patch capability."""
 
 from __future__ import annotations

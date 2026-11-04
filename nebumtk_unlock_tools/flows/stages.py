@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Shared multi-stage flows (OPPO / Vivo)."""
 
 from __future__ import annotations

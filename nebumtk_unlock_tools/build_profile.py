@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Build-time product identity.
 
 This is the open-source 1.1 offline baseline: one product, no channel switch.

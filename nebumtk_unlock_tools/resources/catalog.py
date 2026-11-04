@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Signed offline device catalog and local model-pack handling."""
 
 from __future__ import annotations

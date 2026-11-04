@@ -89,4 +89,12 @@ python tools\fetch_sakisu.py --check
 
 ## 许可
 
-MIT，见 [LICENSE](LICENSE)。第三方组件见 [NOTICE.md](NOTICE.md)。
+本项目代码以 **GNU Affero General Public License v3.0（only）** 发布——强著佐权，不是
+宽松许可。全文见 [LICENSE](LICENSE)。
+
+- 分发编译产物必须同时提供完整对应源码，衍生作品只能继续 AGPL-3.0-only。
+- 包装成在线服务同样触发 AGPL §13：要向服务对象提供源码。
+- 不能用 MIT/Apache 之类条款重新发布本项目代码。
+- 第三方组件（Monocypher、PyCryptodome、Qt/PySide6、Android platform-tools、厂商
+  misc 镜像、上游 SakiSU）按各自许可，见 [NOTICE.md](NOTICE.md)；Qt/PySide6 是
+  LGPL-3，只做动态链接。

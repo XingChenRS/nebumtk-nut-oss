@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Shared flow helpers."""
 
 from __future__ import annotations
