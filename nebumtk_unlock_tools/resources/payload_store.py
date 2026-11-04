@@ -156,3 +156,4 @@ def unwrap_payload_key(preload_id: str, root: Path | None = None) -> bytearray:
     if len(key) != 32:
         raise MaterialError(f"preload 密钥长度无效: {preload_id}")
     return bytearray(key)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

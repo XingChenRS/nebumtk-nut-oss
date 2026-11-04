@@ -866,3 +866,4 @@ class DualSlotSyncFlow:
             image_profile=profile.xingc_patch_profile,
         )
         ctx.set_progress(100, "收尾完成")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

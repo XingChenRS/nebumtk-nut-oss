@@ -62,3 +62,4 @@ def missing_assets_message(expected: Path) -> str:
         f"见 {UPSTREAM_URL}（{UPSTREAM_TAG}），"
         f"或用 `python tools/fetch_sakisu.py` 拉取到 {material_root() / SAKISU_DIR}。"
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

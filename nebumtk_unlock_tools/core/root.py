@@ -490,3 +490,4 @@ def _short(exc: BaseException, limit: int = 200) -> str:
     if len(text) > limit:
         return text[: limit - 3] + "..."
     return text
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -298,3 +298,4 @@ def test_dyn_manifest_preserves_verified_files_and_metadata_for_later_restore(
             profile_key="vivo-test",
             adb_serial="SERIAL",
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

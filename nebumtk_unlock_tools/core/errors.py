@@ -53,3 +53,4 @@ class PatchNotAvailableError(NebumtkError):
 
 class FlowCancelledError(NebumtkError):
     """Unlock flow was cancelled by the user."""
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

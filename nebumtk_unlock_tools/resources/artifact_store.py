@@ -110,3 +110,4 @@ def import_artifact(source: Path, artifact_id: str, root: Path | None = None) ->
         encoding="utf-8",
     )
     return target
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

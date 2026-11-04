@@ -62,3 +62,4 @@ def schedule_system_backdrop(widget: "QWidget", *, backdrop_type: int = DWMSBT_M
             apply_system_backdrop(target, backdrop_type=backdrop_type)
 
     QTimer.singleShot(0, apply_if_alive)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

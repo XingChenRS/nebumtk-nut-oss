@@ -437,3 +437,4 @@ class AdbClient:
     def _quote(value: str) -> str:
         escaped = value.replace("'", "'\\''")
         return f"'{escaped}'"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

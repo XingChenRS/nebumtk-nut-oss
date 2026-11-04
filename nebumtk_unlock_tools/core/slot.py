@@ -37,3 +37,4 @@ class SlotManager:
         if use_slot:
             return f"{base}{suffix}"
         return base
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

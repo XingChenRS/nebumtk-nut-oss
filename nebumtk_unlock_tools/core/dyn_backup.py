@@ -249,3 +249,4 @@ def _ensure_not_cancelled(cancelled: Callable[[], bool] | None) -> None:
         from .errors import FlowCancelledError
 
         raise FlowCancelledError("operation cancelled")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

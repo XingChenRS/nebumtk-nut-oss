@@ -87,3 +87,4 @@ class SessionLog:
                     fh.write(line)
         except OSError:
             pass
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

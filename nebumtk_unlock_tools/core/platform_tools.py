@@ -153,3 +153,4 @@ def resolve_platform_tools(
         )
     directory = Path(adb).parent if adb else (Path(fastboot).parent if fastboot else None)
     return PlatformTools(directory=directory, adb=adb, fastboot=fastboot)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

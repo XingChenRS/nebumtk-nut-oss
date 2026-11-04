@@ -584,3 +584,4 @@ class FlowContext:
             # set_active 失败不影响 flash 结果，用户可手动 set，但仍需可见告警
             self.callbacks.log(f"set_active {letter} 失败: {exc}")
         self.fastboot.reboot()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

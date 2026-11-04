@@ -51,3 +51,4 @@ class ActivityState:
 def format_remaining_seconds(seconds: float) -> str:
     whole = max(0, int(seconds))
     return f"{whole // 60:02d}:{whole % 60:02d}"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

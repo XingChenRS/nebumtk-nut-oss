@@ -438,3 +438,4 @@ def test_wait_android_ready_rejects_timeout_and_cancellation(tmp_path: Path) -> 
     cancelled_context = make_context(tmp_path, adb, fastboot, cancelled=lambda: True)
     with pytest.raises(FlowCancelledError):
         cancelled_context.wait_android_ready(timeout=5)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

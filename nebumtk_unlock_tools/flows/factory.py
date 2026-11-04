@@ -94,3 +94,4 @@ def create_flow(
             raise ValueError("双槽同步需要显式选中 patched LK")
         return DualSlotSyncFlow(project_root, workspace_root, settings, patched_lk, callbacks)
     raise ValueError(f"未知 flow_kind: {flow_kind}")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

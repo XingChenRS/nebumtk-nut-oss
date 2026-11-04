@@ -35,3 +35,4 @@ def no_ambient_material(monkeypatch: pytest.MonkeyPatch) -> None:
     if os.environ.get("NUT_TEST_KEEP_MATERIAL"):
         return
     monkeypatch.setenv("NUT_MATERIAL_ROOT", str(Path(__file__).parent / ".no-material"))
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -180,3 +180,4 @@ def test_honor_artifact_metadata_is_hash_locked() -> None:
     assert len(ciphertext) == record["size"] + 16  # AES-GCM tag
     assert len(record["salt_b64"]) > 0
     assert len(record["nonce_b64"]) > 0
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

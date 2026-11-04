@@ -706,3 +706,4 @@ class ToolboxUi:
             families[0] if families else "",
         )
         return cls._cjk_font_family
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -106,3 +106,4 @@ class WorkspaceManager:
 
     def operation_files(self, label: str) -> OperationFiles:
         return OperationFiles(self.root, label)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

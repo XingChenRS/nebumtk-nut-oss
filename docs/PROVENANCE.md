@@ -8,6 +8,7 @@
 | 位置 | 内容 | 作用 |
 |---|---|---|
 | 每个第一方 `.py` 前两行 | `SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>` + `SPDX-License-Identifier: AGPL-3.0-only` | 逐文件归属，REUSE 兼容；删掉即失去合法副本身份 |
+| 每个第一方 `.py` 末行 | `# provenance: NBMTK-canary-7f3a91c4e8b2d05f` | 文件级水印：整文件照搬（最常见）会带着它；删头和删它要动每一处 |
 | `LICENSE` 开头 | 版权行 + "section 5 requires all notices to be kept" + 溯源 token | 许可正文里的第一道署名 |
 | `nebumtk_unlock_tools/__init__.py` | `PROVENANCE_MARK`、`PROVENANCE_TOKEN`、`license_notice()`、`check_provenance()` | 代码内的机器可读标记，并随编译进二进制 |
 | `python -m nebumtk_unlock_tools --license` | 打印 banner（含 token 与版权行） | 把声明变成**可观测行为**：删掉标记的改版连这条命令都答不出来 |
@@ -16,7 +17,11 @@
 `PROVENANCE_TOKEN = NBMTK-canary-7f3a91c4e8b2d05f`
 
 这个 token 被刻意做成"没人会自己写出来"的形状：它不是 UUID，也不是单词，改名、换包名、
-重排版都不会顺手消掉它；而它出现在包根、入口、工具、许可与文档里，想清干净得逐处手改。
+重排版都不会顺手消掉它；而它出现在包根、入口、工具、许可、文档与每个文件的末尾，想清干净
+得逐处手改。
+
+`PROVENANCE_TOKEN` 这一行是**水印**不是装甲：把文件整段复制走的人会带着它，逐行重写的人
+不会——后者由下一节的结构比对负责。
 
 ## 2. 自己这棵树的闸门
 
@@ -38,12 +43,17 @@ python tools\audit_provenance.py --scan <path>
 python tools\audit_provenance.py --scan NEBUMTK_UNLOCK_TOOLS.exe
 ```
 
-它按三类证据判定，命中即退出码 0（有证据）：
+它按四类证据判定，命中即退出码 0（有证据）：
 
-1. `PROVENANCE_MARK` / `PROVENANCE_TOKEN` 原样出现；
+1. `PROVENANCE_MARK` / `PROVENANCE_TOKEN` 原样出现（含每个文件末行的水印）；
 2. 我们代码里那些"不会撞车"的字面量（协议 AAD 前缀、`NEBUMTK-XINGC-PROTOCOL-PERMIT-v1`
    之类）成片出现；
-3. 文件里仍留着 SPDX 头（对方连头都没清）。
+3. 文件里仍留着 SPDX 头（对方连头都没清）；
+4. **结构比对**：把目标的实质性代码行（去空白、去注释、≥24 字符）与我们第一方代码的
+   行哈希集合求交集，单文件命中 ≥8 行且 ≥50% 即记为证据，并报出比例。
+
+第 4 类专门对付"改了文件名、删了头、换了包名"的抄法——实测把 `lk/ubl/patcher.py`
+去掉头和 token 行、改名成 `generic_patch.py` 后，仍然报 67/67 行（100%）。
 
 退出码约定：`0` = 有证据，`2` = 干净，`1` = 用法错误。这样可以直接塞进脚本做批量巡查。
 

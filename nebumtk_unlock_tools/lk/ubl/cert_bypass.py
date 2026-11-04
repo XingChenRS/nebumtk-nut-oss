@@ -27,3 +27,4 @@ def apply_cert_bypass_to_bytes(contents: bytes, mode: str = "override") -> tuple
 def trim_lk_container_bytes(contents: bytes) -> bytes:
     image = LibLkImage(contents)
     return bytes(image.contents[:_used_region_end(image)])
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

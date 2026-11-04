@@ -138,3 +138,4 @@ class RebootWorker(QThread):
             expected_mode=self.target,
         ))
         raise VerificationError("重启请求已发送，但未能确认目标状态")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

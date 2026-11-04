@@ -375,3 +375,4 @@ def _is_fastboot_interface(interface) -> bool:
         and int(interface.bInterfaceSubClass) == 0x42
         and int(interface.bInterfaceProtocol) == 0x03
     )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

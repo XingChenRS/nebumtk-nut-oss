@@ -46,3 +46,4 @@ def check_provenance(text: str) -> bool:
     if not isinstance(text, str):
         return False
     return PROVENANCE_MARK in text and PROVENANCE_TOKEN in text
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

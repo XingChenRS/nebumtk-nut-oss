@@ -228,3 +228,4 @@ def test_native_wrapper_has_separate_reviewed_exec_and_preload_branches() -> Non
     assert 'unsetenv("LD_PRELOAD")' in source
     assert 'else if (setenv("LD_PRELOAD", fd_path, 1) != 0)' in source
     assert "parse_hex_key" not in source
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

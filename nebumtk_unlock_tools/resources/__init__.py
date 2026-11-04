@@ -3,3 +3,4 @@
 from .loader import DeviceResources, ProtectedPreload, ResourceLoader
 
 __all__ = ["DeviceResources", "ProtectedPreload", "ResourceLoader"]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

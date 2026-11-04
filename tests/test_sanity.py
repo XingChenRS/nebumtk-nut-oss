@@ -371,3 +371,4 @@ if __name__ == "__main__":
     test_profile_identity_boundary()
     test_resource_loader_misc_resolves()
     print("sanity checks passed")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

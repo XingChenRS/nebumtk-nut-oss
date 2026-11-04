@@ -197,3 +197,4 @@ class PartitionOps:
         if result.returncode != 0 or "error" in output or "i/o error" in output or "no space" in output:
             raise PartitionError(f"写入 {block_name} 失败: {result.output}")
         self.log(f"已写入 {block_name}")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

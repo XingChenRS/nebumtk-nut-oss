@@ -123,3 +123,4 @@ def _boot_structure(path: Path) -> tuple[bytes, bool]:
         stream.seek(-64, 2)
         footer = stream.read(4)
     return header, footer == b"AVBf"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

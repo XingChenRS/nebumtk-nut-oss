@@ -167,3 +167,4 @@ class SettingsDialog(QDialog):
                 self.test_mode_check.isChecked() and not is_online()
             ),
         )
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

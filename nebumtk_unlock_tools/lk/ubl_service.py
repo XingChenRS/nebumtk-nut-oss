@@ -138,3 +138,4 @@ class InternalUblPatcher:
     def _ensure_not_cancelled(self) -> None:
         if self._cancelled():
             raise FlowCancelledError("用户已取消")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

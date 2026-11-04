@@ -40,3 +40,4 @@ class StepVerifier:
         normalized = value.strip().lower()
         if normalized not in {"yes", "true", "1", "unlocked"}:
             raise VerificationError(f"设备未解锁: unlocked={value!r}")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

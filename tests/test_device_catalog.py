@@ -270,3 +270,4 @@ def test_model_pack_size_is_bounded_before_parse(
 
     with pytest.raises(catalog.CatalogError, match="大小无效"):
         catalog.install_model_pack(source)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

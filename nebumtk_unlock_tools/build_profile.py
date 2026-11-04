@@ -24,3 +24,4 @@ def channel() -> str:
 
 def is_online() -> bool:
     return False
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

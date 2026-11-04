@@ -2176,3 +2176,4 @@ def test_local_patch_preserves_existing_output_and_removes_pending_on_mid_export
 
     assert output.read_bytes() == b"old-output"
     assert not list(output.parent.glob("*.pending-*"))
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

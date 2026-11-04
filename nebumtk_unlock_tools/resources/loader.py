@@ -215,3 +215,4 @@ class ResourceLoader:
         if not path.is_file():
             raise ResourceError(f"misc 资源不存在: {path}")
         return path
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -121,3 +121,4 @@ def wipe(value: bytearray | None) -> None:
         return
     for index in range(len(value)):
         value[index] = 0
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

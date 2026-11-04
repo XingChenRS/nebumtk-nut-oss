@@ -96,3 +96,4 @@ def test_loader_materializes_and_validates_target_slot_wipe_misc(
 
     assert loader.resolve_vivo_wipe_misc("_b") == source
     assert requested == ["vivo_wipe_data_to_b"]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

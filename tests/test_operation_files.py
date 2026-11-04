@@ -193,3 +193,4 @@ def test_cleanup_fails_closed_when_operation_directory_is_replaced_by_real_direc
         operation.cleanup()
 
     assert marker.read_text(encoding="utf-8") == "do not delete"
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

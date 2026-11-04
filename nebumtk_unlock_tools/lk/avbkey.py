@@ -80,3 +80,4 @@ def avb_blob_to_public_key(blob: bytes) -> object:
     parsed = AvbPublicKeyBlob.from_bytes(blob)
     modulus = int.from_bytes(parsed.modulus, "big")
     return rsa.RSAPublicNumbers(RSA_PUBLIC_EXPONENT, modulus).public_key()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

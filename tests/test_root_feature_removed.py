@@ -90,3 +90,4 @@ def test_reclassified_flow_routes_have_one_explicit_responsibility(tmp_path: Pat
     assert isinstance(complete, VivoCompleteUnlockFlow)
     assert isinstance(restore, RestoreBackupLkFlow)
     assert isinstance(sync, DualSlotSyncFlow)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

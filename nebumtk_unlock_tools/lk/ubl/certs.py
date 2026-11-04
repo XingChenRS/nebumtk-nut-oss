@@ -41,3 +41,4 @@ def inspect_cert_status(data: bytes) -> tuple[CertStatus, ...]:
 
 def inspect_cert_status_file(path: str | Path) -> tuple[CertStatus, ...]:
     return inspect_cert_status(Path(path).read_bytes())
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -179,3 +179,4 @@ def test_non_unlock2_command_context_is_selected_without_a_device_profile_gate()
 
     assert status.state == "original"
     assert status.offset == 40 + context.index(b"veify")
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

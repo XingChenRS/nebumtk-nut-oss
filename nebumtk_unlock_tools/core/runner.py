@@ -174,3 +174,4 @@ def _raise_timeout(args: Sequence[str], sensitive: bool, exc: BaseException | No
     if exc is None:
         raise CommandTimeoutError(f"命令超时: {command}")
     raise CommandTimeoutError(f"命令超时: {command}") from exc
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

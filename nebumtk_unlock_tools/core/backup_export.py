@@ -476,3 +476,4 @@ def _sha256_file(path: Path) -> str:
         while chunk := source.read(1024 * 1024):
             digest.update(chunk)
     return digest.hexdigest()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

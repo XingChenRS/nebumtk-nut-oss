@@ -114,3 +114,4 @@ def test_restore_does_not_escalate_or_reboot_when_no_real_root_is_available(tmp_
     assert target.files == {}
     assert target.pushed == []
     assert target.reboots == 0
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

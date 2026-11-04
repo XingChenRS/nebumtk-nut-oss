@@ -947,3 +947,4 @@ def test_worker_confirmation_bridge_remains_non_blocking_on_cancel(tmp_path: Pat
     worker.confirmation_requested.connect(approve)
     assert worker._confirm_from_main_window("flash?") is True
     assert seen == ["flash?"]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

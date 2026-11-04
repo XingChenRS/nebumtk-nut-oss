@@ -20,3 +20,4 @@ def test_generated_module_loader_executes_current_source_not_cached_module(tmp_p
         assert loaded.VALUE == "current"
     finally:
         sys.modules.pop(module_name, None)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

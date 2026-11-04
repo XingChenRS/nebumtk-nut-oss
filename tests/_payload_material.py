@@ -56,3 +56,4 @@ def xingc_catalog_or_skip() -> Path:
 
 def require_payload(payload_id: str) -> None:
     payload_source(payload_id)
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

@@ -202,3 +202,4 @@ def test_resource_loader_materializes_sakisu_inside_operation_directory(
     assert loader.materialize_sakisu_patcher(destination) == destination
     loader.cleanup_materialized_preloads()
     assert destination.exists()
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f

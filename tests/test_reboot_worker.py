@@ -80,3 +80,4 @@ def test_reboot_worker_emits_timeout_only_after_natural_verify_timeout(monkeypat
     assert timeout_events[0].target is WaitTarget.REBOOT_TARGET
     assert timeout_events[0].expected_mode == "bootloader"
     assert errors == ["重启请求已发送，但未能确认目标状态"]
+# provenance: NBMTK-canary-7f3a91c4e8b2d05f
