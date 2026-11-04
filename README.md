@@ -87,6 +87,19 @@ python tools\fetch_sakisu.py --apk <apk> --host <ksud.exe>
 python tools\fetch_sakisu.py --check
 ```
 
+## 署名与溯源
+
+```
+Copyright (c) 2026 雾月星辰 & MLXC <github@XingChenRS>
+SPDX-License-Identifier: AGPL-3.0-only
+Provenance token: NBMTK-canary-7f3a91c4e8b2d05f
+```
+
+每个第一方源文件带这两行 SPDX 头；`LICENSE` 开头是同一份署名；`--license` 会把它打印
+出来。删掉这些声明的发行版不是合法副本（AGPL §5），抄走的代码里仍会带着 token——
+`python tools\audit_provenance.py --scan <path>` 可以把证据列出来。详见
+[docs/PROVENANCE.md](docs/PROVENANCE.md)。
+
 ## 许可
 
 本项目代码以 **GNU Affero General Public License v3.0（only）** 发布——强著佐权，不是

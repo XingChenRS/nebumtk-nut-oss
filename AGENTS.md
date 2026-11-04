@@ -34,6 +34,10 @@ Python/PySide6 应用，Nuitka standalone 分发。**无服务端、无账号、
 - **许可固定为 AGPL-3.0-only。** 不要改成 MIT/Apache/BSD，也不要加"或更高版本"；
   新文件首行带 `SPDX-License-Identifier: AGPL-3.0-only`；引入依赖前先确认它能并入
   AGPL（Qt/PySide6 是 LGPL-3，只允许动态链接）。第三方 vendor 代码保留原许可。
+- **不要动署名与溯源标记。** 两行 SPDX 头、`PROVENANCE_MARK`/`PROVENANCE_TOKEN`、
+  `LICENSE` 前言的版权行都受 AGPL §5 保护；新增第一方文件照抄这两行头，新增协议字面量
+  顺手加进 `tools/audit_provenance.py` 的 `FINGERPRINTS`。发行前跑
+  `python tools\audit_provenance.py --self .`。
 - 仓库不携带厂商素材：无 LK 镜像、无明文 payload、无 Xingc 私钥、无机型固件、无
   SakiSU patcher。
 - 不提供持久 Root 管理：无 KernelSU/SakiSU/Magisk 管理器、无 `libksud.so`、无 root
