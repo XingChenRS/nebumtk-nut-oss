@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>NEBUMTK 五页 UI 拓扑与功能语义</title>
+<style>
+  :root{
+    --ink:#221f1c; --muted:#6d635a; --line:#ddd3c6; --bg:#faf6f0; --card:#fffdfa;
+    --ok:#2f7d4f; --okbg:#e8f4ec; --new:#2b5fa8; --newbg:#e7eef9;
+    --local:#4a5b8c; --localbg:#eaeef8; --warn:#9a6b12; --warnbg:#fbf1dc;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:28px 30px 64px;background:var(--bg);color:var(--ink);
+       font:14px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+  h1{font-size:21px;margin:0 0 4px;font-weight:600}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:20px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;font-size:12.5px}
+  .chip{padding:3px 10px;border-radius:20px;border:1px solid transparent}
+  .chip.ok{background:var(--okbg);color:var(--ok);border-color:#cbe3d6}
+  .chip.new{background:var(--newbg);color:var(--new);border-color:#c6d8ef}
+  .chip.local{background:var(--localbg);color:var(--local);border-color:#cdd6ee}
+  .chip.warn{background:var(--warnbg);color:var(--warn);border-color:#eddcb8}
+  section{margin-bottom:24px;background:var(--card);border:1px solid var(--line);
+          border-radius:10px;overflow:hidden}
+  header{display:flex;align-items:baseline;gap:10px;padding:12px 18px;
+         background:#f2ece3;border-bottom:1px solid var(--line)}
+  header .n{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.08em}
+  header .t{font-size:15px;font-weight:600}
+  header .k{margin-left:auto;font-size:12px;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
+  table{width:100%;border-collapse:collapse}
+  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+     text-align:left;padding:8px 18px;border-bottom:1px solid var(--line);font-weight:600}
+  td{padding:9px 18px;border-bottom:1px solid #efe7dc;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .btn{font-weight:600}
+  .kind{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#3d5a80;
+        background:#eef3fa;padding:1px 6px;border-radius:4px}
+  .end{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--muted)}
+  .note{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  .rownew{background:#f5f9ff}
+  pre{margin:10px 0 0;padding:12px 16px;background:#f4efe7;border:1px solid var(--line);
+      border-radius:8px;font:12.5px/1.7 ui-monospace,Consolas,monospace;overflow-x:auto}
+  footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+  code{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:#f1eae0;padding:1px 5px;border-radius:3px}
+</style>
+</head>
+<body>
+
+<h1>NEBUMTK 五页 UI 拓扑与功能语义</h1>
+<div class="sub">每个按钮 → 实际对设备做什么。按当前工作区代码生成（584 tests 通过，构建+审计通过）。</div>
+
+<div class="legend">
+  <span class="chip ok">✅ 可用</span>
+  <span class="chip new">🆕 本轮新增/重做</span>
+  <span class="chip local">🖥 纯本地（不碰设备）</span>
+  <span class="chip warn">📌 需注意</span>
+</div>
+
+<!-- 1 -->
+<section>
+  <header><span class="n">PAGE 1</span><span class="t">设备</span><span class="k">device</span></header>
+  <table>
+    <tr><th>按钮</th><th>执行体</th><th>设备动作</th><th>结束于</th></tr>
+    <tr><td class="btn">刷新设备</td><td><span class="kind">device_scan</span></td>
+        <td>ADB / Fastboot 轮询识别机型、槽位、模式</td><td class="end">—</td></tr>
+    <tr><td class="btn">安全诊断</td><td><span class="kind">diagnostics</span></td>
+        <td>只读读取设备属性（已脱敏）</td><td class="end">—</td></tr>
+    <tr><td class="btn">重启：系统 / fastbootd / bootloader / recovery</td>
+        <td><span class="kind">RebootWorker</span></td>
+        <td><code>FastbootClient.reboot() / reboot_fastboot() / reboot_bootloader()</code>；recovery 仅 ADB</td>
+        <td class="end">目标模式</td></tr>
+  </table>
+</section>
+
+<!-- 2 -->
+<section>
+  <header><span class="n">PAGE 2</span><span class="t">分区与备份</span><span class="k">partitions</span></header>
+  <table>
+    <tr><th>入口</th><th>执行体</th><th>对设备做什么</th><th>说明</th></tr>
+    <tr class="rownew"><td class="btn">刷新清单</td><td><span class="kind">inventory</span></td>
+        <td>ADB 只读：解析 <code>/dev/block/by-name</code>，列出分区名 / 基名 / 槽位 / 对槽 / 容量</td>
+        <td>读到的清单按 serial 缓存，Fastboot 下通用</td></tr>
+    <tr class="rownew"><td class="btn">备份所选</td><td><span class="kind">backup_selected</span></td>
+        <td>ADB + su：<code>dd</code> 读出勾选分区 → pull 到桌面（与备份同形的目录 + manifest）</td>
+        <td>大容量会先弹确认</td></tr>
+    <tr class="rownew"><td class="btn">操作清单（每分区一行）</td><td><span class="kind">checklist</span></td>
+        <td><b>ADB：</b>读取 / 写入<br><b>Fastboot：</b>写入 / 擦除</td>
+        <td>按当前模式启用对应列；不可用的列置灰</td></tr>
+    <tr class="rownew"><td class="btn">为选中行选择镜像</td><td>—</td>
+        <td>给该行的「写入」指定镜像文件</td><td>双击镜像单元格同样可选</td></tr>
+    <tr class="rownew"><td class="btn">导入备份 manifest</td><td><span class="kind">manifest import</span></td>
+        <td>不碰设备：读出 manifest 里各分区的镜像文件，自动填入对应行并勾选「写入」</td>
+        <td>可逐行取消勾选或换成别的文件；缺文件会列出来</td></tr>
+    <tr class="rownew"><td class="btn">执行清单</td><td><span class="kind">ChecklistRequest</span></td>
+        <td>后台线程<b>按顺序逐条执行</b>，每步开始前检查中断；界面全程可用</td>
+        <td>执行前弹出完整清单确认</td></tr>
+  </table>
+  <p class="note">
+    <b>写入的具体实现：</b>ADB 下先 <code>blockdev --setrw</code>，再用
+    <code>dd if=&lt;镜像&gt; of=/dev/block/by-name/&lt;分区&gt; bs=1M conv=fsync</code>；
+    写入前校验镜像不得大于分区容量。Fastboot 下用 <code>fastboot flash</code>，擦除用
+    <code>fastboot erase</code>。<br>
+    <b>读取：</b><code>dd</code> 到远端临时文件 → 校验大小 → pull → 落到桌面备份目录，远端临时文件必定清理。<br>
+    <b>不再保留的：</b>写入对槽 / 双槽 Flash / 还原原槽 / 收尾重启（那四个是品牌流程的东西，已删）。
+  </p>
+</section>
+
+<!-- 3 -->
+<section>
+  <header><span class="n">PAGE 3</span><span class="t">Root 与解锁</span><span class="k">authorized</span></header>
+  <table>
+    <tr><th>按钮</th><th>flow</th><th>对设备做什么</th><th>结束于</th></tr>
+    <tr><td class="btn">临时提权</td><td><span class="kind">root_escalation</span></td>
+        <td>ADB：受保护 preload + 一次性 <code>su</code>（不常驻）</td><td class="end">—</td></tr>
+    <tr><td class="btn">备份</td><td><span class="kind">backup_export</span></td>
+        <td>ADB：按机型 profile 备份分区 → 桌面 + manifest</td><td class="end">—</td></tr>
+    <tr><td class="btn">准备解锁<br><span class="note">Vivo / Honor / OPPO；ADB；写入前需选定 patched LK<br>
+        注释按机型分开：Vivo 之后走 Xingc；Honor 靠启动到对槽的 patched LK 完成解锁；
+        OPPO 为下一步 flashing unlock 铺路，解锁后必须「还原双槽原 LK」</span></td>
+        <td><span class="kind">write_inactive<br>honor_prepare</span></td>
+        <td>ADB：写对槽 LK + 本机 misc，然后重启进 fbd→fb。<b>不发出 flashing unlock</b></td>
+        <td class="end">bootloader</td></tr>
+
+    <tr class="rownew"><td class="btn">开始 Vivo 完整解锁<br><span class="note">＋「完整解锁收尾时写入原槽 init_boot」勾选框</span></td>
+        <td><span class="kind">vivo_complete_unlock</span></td>
+        <td>见下方时序</td><td class="end">reboot</td></tr>
+
+    <tr><td class="btn">开始 Honor 完整解锁</td><td><span class="kind">honor_complete</span></td>
+        <td>Fastboot：写双槽 patched LK → <b>set_active 切回原槽</b> → 重启</td>
+        <td class="end">reboot_checked</td></tr>
+    <tr><td class="btn">OPPO Unlock</td><td><span class="kind">oppo_unlock</span></td>
+        <td>bootloader Fastboot：<code>fastboot flashing unlock</code>（失败重试 3 次；已解锁则短路）。
+        <b>前置：</b>先用上面的「准备解锁」把 patched LK 写进对槽</td>
+        <td class="end">—</td></tr>
+    <tr><td class="btn">Xingc 解锁 / 回锁</td><td><span class="kind">vivo_xingc_unlock / _lock</span></td>
+        <td>bootloader Fastboot：Xingc 授权</td><td class="end">—</td></tr>
+
+    <tr class="rownew"><td class="btn">同步 patched LK<br><span class="note">用于 unlock 后不能还原原机 LK 的机型（Vivo / Honor）</span></td>
+        <td><span class="kind">dual_slot_sync</span></td>
+        <td>bootloader Fastboot：写双槽 → <b>set_active</b> → 重启</td>
+        <td class="end">reboot_checked</td></tr>
+    <tr class="rownew"><td class="btn">还原双槽原 LK<br><span class="note">用于 unlock 后需要还原原机 LK 的机型（例如 OPPO）</span></td>
+        <td><span class="kind">restore_original_lk</span></td>
+        <td>bootloader Fastboot：写双槽 → <b>set_active</b> → 重启</td>
+        <td class="end">reboot_checked</td></tr>
+
+    <tr><td class="btn">重启设备</td><td><span class="kind">reboot_action</span></td>
+        <td>ADB/Fastboot 重启</td><td class="end">—</td></tr>
+  </table>
+
+  <p class="note"><b>Vivo 完整解锁时序（收尾不再进 fbd、不再写 directional misc）：</b></p>
+  <pre> 5%  检查内部 LK patcher
+12%  提权
+24%  备份活动槽分区（profile 默认含 lk + init_boot）
+31%  〔可选〕准备原槽 init_boot 的 SakiSU 补丁
+        · 镜像页已修补并选中 → 直接用
+        · 否则用本次备份的原槽 init_boot 现打（需在镜像页选定 KMI）
+38%  修补本次备份 LK
+50%  首次写入对槽 LK 与 misc          ← ADB dd；misc 决定设备随后进 fbd→fb
+58%  确认 fastbootd 并进入 bootloader Fastboot
+66%  Xingc 解锁                       ← bootloader Fastboot
+82%  写双槽 LK → set_active 回原槽 →〔可选〕写原槽 init_boot → 重启
+94%  等待系统启动，确认确实回到原槽</pre>
+  <p class="note">
+    <b>关于 init_boot：</b>只有勾选框勾上（默认不勾）才写，且<b>只写原槽</b>，绝不写对槽；
+    没有可用补丁镜像时会在确认框前拦下并提示。
+  </p>
+</section>
+
+<!-- 4 -->
+<section>
+  <header><span class="n">PAGE 4</span><span class="t">镜像与恢复</span><span class="k">images</span></header>
+  <table>
+    <tr><th>按钮</th><th>执行体</th><th>做什么</th><th>状态</th></tr>
+    <tr><td class="btn">检测外部 LK</td><td><span class="kind">InternalUblPatcher.inspect</span></td>
+        <td>解析本地 LK 结构 / 分区 / 容量</td><td class="state local">🖥 本地</td></tr>
+    <tr><td class="btn">修补 LK</td><td><span class="kind">patch_lk</span></td>
+        <td>修补本地 LK 镜像 → 输出文件</td><td class="state local">🖥 本地</td></tr>
+    <tr><td class="btn">SakiSU 修补</td><td><span class="kind">SakisuPatchFlow</span></td>
+        <td>用随包 patcher 修补 boot / init_boot → <b>只生成文件</b>（KMI 在此选择）</td>
+        <td class="state local">🖥 本地</td></tr>
+    <tr><td class="btn">Vivo dyn 捕获 / 还原</td><td><span class="kind">vivo_dyn</span></td>
+        <td>ADB + su：导出 / 还原 dyn 分区</td><td class="state">✅</td></tr>
+  </table>
+  <p class="note">这一页不写设备。它产出的 patched init_boot 由第 3 页的勾选框取用。</p>
+</section>
+
+<!-- 5 -->
+<section>
+  <header><span class="n">PAGE 5</span><span class="t">工具与设置</span><span class="k">advanced</span></header>
+  <table>
+    <tr><th>按钮</th><th>执行体</th><th>做什么</th><th>状态</th></tr>
+    <tr><td class="btn">工作区目录</td><td>open_workspace_dir</td><td>打开本地工作目录</td><td class="state local">🖥 本地</td></tr>
+    <tr><td class="btn">自定义 su 校验</td><td><span class="kind">CustomSuProbeWorker</span></td>
+        <td>ADB：固定 <code>id</code> 探针必须返回 uid 0</td><td class="state">✅</td></tr>
+    <tr><td class="btn">Platform tools 终端</td><td><span class="kind">TerminalWorker</span></td>
+        <td>本地 adb / fastboot 命令</td><td class="state local">🖥 本地</td></tr>
+  </table>
+</section>
+
+<footer>
+  <b>对设备的写入路径一共只有 5 条</b>（全部在 <code>flows/stages.py</code> 与 <code>core/</code>）：<br>
+  <code>flash_dual_lk + set_active + reboot_checked</code>（双槽三件套） ·
+  <code>flash_partition(init_boot 单槽)</code>（SakiSU 原槽） ·
+  <code>flash_lk(单槽) + misc + reboot</code>（ADB 入口） ·
+  <code>flashing_unlock_with_retry()</code>（OPPO 解锁） ·
+  <code>dd 写分区</code>（分区页清单）。
+</footer>
+
+</body>
+</html>

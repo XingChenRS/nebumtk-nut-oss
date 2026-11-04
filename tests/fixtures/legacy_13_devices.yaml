@@ -1,0 +1,529 @@
+devices:
+  oppofindx9:
+    brand: oppo
+    display_name: OPPO Find X9
+    match:
+      brand: oppo
+      model:
+      - findx9
+      firmware: 16.0.8.301
+    resources:
+      preload: builtin:oppo_fx9_fx9p_16.0.8.301
+      su_path: su
+      preload_trigger: /system/bin/true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+  oppofindx9pro:
+    brand: oppo
+    display_name: OPPO Find X9 Pro
+    match:
+      brand: oppo
+      model:
+      - findx9pro
+      firmware: 16.0.8.301
+    resources:
+      preload: builtin:oppo_fx9_fx9p_16.0.8.301
+      su_path: su
+      preload_trigger: /system/bin/true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+  vivox200:
+    brand: vivo
+    display_name: vivo X200
+    match:
+      brand: vivo
+      model:
+      - x200
+    resources:
+      preload: builtin:vivo_x200all_os5d
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivox200pro:
+    brand: vivo
+    display_name: vivo X200 Pro
+    match:
+      brand: vivo
+      model:
+      - x200pro
+    resources:
+      preload: builtin:vivo_x200all_os5d
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivox200promini:
+    brand: vivo
+    display_name: vivo X200 Pro Mini
+    match:
+      brand: vivo
+      model:
+      - x200promini
+      - b200pm
+    resources:
+      preload: builtin:vivo_x200all_os5d
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivopad5:
+    brand: vivo
+    display_name: vivo Pad 5
+    match:
+      brand: vivo
+      model:
+      - vivo pad 5
+      - vivo pad5
+    resources:
+      preload: builtin:dpd2437_mt6989_918bf64b
+      su_path: /data/local/tmp/su
+      preload_trigger: /system/bin/id
+      preload_env:
+        PATH: /system/bin:/system_ext/bin:/vendor/bin
+        HOME: /data/local/tmp
+        TMPDIR: /data/local/tmp
+        PRELOAD_LOG_DIR: /data/local/tmp
+        PRELOAD_LOG_HOST_MIRROR: '1'
+        TRACEFS_KPTR_OFF: '0x2EFA44'
+        KASLR_ONLY: '0'
+        KASLR_ALLOW_SLIDE_FALLBACK: '0'
+        STACK_STAMP: socket
+        PAGE_RECLAIM_VIA: filemap
+        PAGE_FILEMAP_DIR: /data/local/tmp
+        PAGE_FILEMAP_PAGES: '4096'
+        PAGE_FILEMAP_MIN_SLOTS: '8'
+        PAGE_FILEMAP_ATTEMPTS: '64'
+        PAGE_RECLAIM_SKB_ALSO: '0'
+        PAGE_RECLAIM_SKB_FALLBACK: '0'
+        PAGE_CLOSE_ALL_POST: '0'
+        PAGE_CLOSE_ALL_SPRAY: '0'
+        PAGE_PHYS_OFFSET_ALLOW_400M_FALLBACK: '1'
+        PAGE_REQUIRE_PAINT: '1'
+        PAGE_DATA_PHYSMAP: '0'
+        PAGE_WRITE_CANARY: '0'
+        PAGE_WRITE_SELINUX: '0'
+        PAGE_WRITE_MISC_FOPS: '1'
+        PAGE_WRITE_FILE_FOP: '0'
+        PAGE_WRITE_ASHMEM_ITER: '0'
+        PAGE_WRITE_PIPEFIFO: '0'
+        PAGE_WRITE_FAKE_FOPS: '0'
+        PAGE_MISC_DEVICE: ashmem
+        PAGE_MISC_FOPS_VALUE_DELTA: '0'
+        PAGE_MISC_PREOPEN_REPAINT: '1'
+        PAGE_MISC_PREOPEN_VERIFY: '0'
+        PAGE_MISC_SKIP_OPEN: '0'
+        PAGE_MISC_PROBE_CACHED: '0'
+        PAGE_MISC_RESTORE_ON_OPEN_FAIL: '1'
+        FAKE_FOPS_OPEN_NULL: '0'
+        FAKE_FOPS_RELEASE_NULL: '0'
+        PSELECT_WRITE_SHAPE: '1'
+        STAMP_ARM_CONSUMER: '1'
+        STAMP_FILL: scan
+        STAMP_SCAN: '0'
+        STAMP_FORGE_OFF: '120'
+        STAMP_FORGE_STEP: '8'
+        STAMP_REUSE_PAGE: '1'
+        STAMP_WARM_USEC: '50000'
+        STAMP_HOLD_USEC: '80000'
+        STAMP_CONSUMER_DELAY_USEC: '0'
+        STAMP_ATTEMPTS: '1'
+        PSELECT_CONSUMER_NICE: '19'
+        CONSUMER_POLICY_TOGGLE: '0'
+        CONSUMER_MAX_CALLS: '1'
+        PSELECT_CONSUMER_BURST_CALLS: '1'
+        CONSUMER_VERBOSE: '0'
+        ROUTE_THREAD_WAIT_MSEC: '5000'
+        PAGE_PIPE_STAGE_DEBUG: '1'
+        PAGE_PIPE_CACHE_DEBUG: '1'
+        PAGE_PIPE_STAGE_ATTEMPTS: '12'
+        ROOT_SKIP_WALLPAPER: '1'
+        SU_DAEMON_WATCH_SECS: '8'
+      preload_clean_env: true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  iqoopad5pro:
+    brand: vivo
+    display_name: iQOO Pad 5 Pro
+    match:
+      brand: vivo
+      model:
+      - iqoo pad 5 pro
+      - iqoo pad5 pro
+      - iqoo pad5pro
+    resources:
+      preload: builtin:vivo_pad5_iqoo_pad5pro_shared
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/true
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivopd2417:
+    brand: vivo
+    display_name: iQOO Z9 Turbo+ (PD2417)
+    match:
+      brand: vivo
+      model:
+      - v2417a
+      - pd2417
+    resources:
+      preload: builtin:pd2417_mt6989_81e684c917
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/id
+      preload_env:
+        STACK_STAMP: socket
+        PAGE_RECLAIM_VIA: filemap
+        PAGE_FILEMAP_PAGES: '4096'
+        PAGE_FILEMAP_ATTEMPTS: '64'
+        PAGE_WRITE_SELINUX: '0'
+        PAGE_WRITE_CANARY: '0'
+        PAGE_WRITE_MISC_FOPS: '1'
+        PAGE_MISC_PREOPEN_REPAINT: '1'
+        PAGE_MISC_PROBE_CACHED: '0'
+        PAGE_MISC_RESTORE_ON_OPEN_FAIL: '1'
+        PAGE_PIPE_STAGE_DEBUG: '1'
+        PAGE_PIPE_CACHE_DEBUG: '1'
+        STAMP_ARM_CONSUMER: '1'
+        STAMP_FILL: scan
+        STAMP_ATTEMPTS: '1'
+        CONSUMER_MAX_CALLS: '1'
+        PSELECT_CONSUMER_BURST_CALLS: '1'
+        CONSUMER_VERBOSE: '0'
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivopd2309:
+    brand: vivo
+    display_name: vivo X100 (PD2309)
+    match:
+      brand: vivo
+      model:
+      - v2309a
+      - pd2309
+    resources:
+      preload: builtin:pd2309_mt6989_truephone
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/id
+      preload_env:
+        STACK_STAMP: socket
+        PAGE_RECLAIM_VIA: filemap
+        PAGE_FILEMAP_PAGES: '4096'
+        PAGE_FILEMAP_ATTEMPTS: '64'
+        PAGE_WRITE_SELINUX: '0'
+        PAGE_WRITE_CANARY: '0'
+        PAGE_WRITE_MISC_FOPS: '1'
+        PAGE_MISC_PREOPEN_REPAINT: '1'
+        PAGE_MISC_PROBE_CACHED: '0'
+        PAGE_MISC_RESTORE_ON_OPEN_FAIL: '1'
+        PAGE_PIPE_STAGE_DEBUG: '1'
+        PAGE_PIPE_CACHE_DEBUG: '1'
+        STAMP_ARM_CONSUMER: '1'
+        STAMP_FILL: scan
+        STAMP_ATTEMPTS: '1'
+        CONSUMER_MAX_CALLS: '1'
+        PSELECT_CONSUMER_BURST_CALLS: '1'
+        CONSUMER_VERBOSE: '0'
+      xingc_patch_profile: x100
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivopd2324:
+    brand: vivo
+    display_name: vivo X100 Pro / X100s Pro (PD2324)
+    match:
+      brand: vivo
+      model:
+      - v2324a
+      - v2324ha
+      - pd2324
+      - x100 pro
+      - x100s pro
+    resources:
+      preload: builtin:pd2324_gki61_misc_14e1c6d0
+      su_path: su
+      preload_trigger: /system/bin/id
+      preload_clean_env: true
+      preload_env:
+        PATH: /system/bin:/system_ext/bin:/vendor/bin
+        HOME: /data/local/tmp
+        TMPDIR: /data/local/tmp
+        PRELOAD_LOG_DIR: /data/local/tmp
+        PRELOAD_LOG_HOST_MIRROR: '1'
+        TRACEFS_KPTR_OFF: '0x2EF804'
+        KASLR_ONLY: '0'
+        STACK_STAMP: socket
+        PAGE_RECLAIM_VIA: filemap
+        PAGE_FILEMAP_DIR: /data/local/tmp
+        PAGE_FILEMAP_PAGES: '4096'
+        PAGE_FILEMAP_MIN_SLOTS: '8'
+        PAGE_FILEMAP_ATTEMPTS: '64'
+        PAGE_RECLAIM_SKB_ALSO: '0'
+        PAGE_RECLAIM_SKB_FALLBACK: '0'
+        PAGE_CLOSE_ALL_POST: '0'
+        PAGE_CLOSE_ALL_SPRAY: '0'
+        PAGE_PHYS_OFFSET_ALLOW_400M_FALLBACK: '1'
+        PAGE_REQUIRE_PAINT: '1'
+        PAGE_DATA_PHYSMAP: '0'
+        PAGE_WRITE_CANARY: '0'
+        PAGE_WRITE_SELINUX: '0'
+        PAGE_WRITE_MISC_FOPS: '1'
+        PAGE_WRITE_FILE_FOP: '0'
+        PAGE_WRITE_ASHMEM_ITER: '0'
+        PAGE_WRITE_PIPEFIFO: '0'
+        PAGE_WRITE_FAKE_FOPS: '0'
+        PAGE_MISC_DEVICE: ashmem
+        PAGE_MISC_FOPS_VALUE_DELTA: '0'
+        PAGE_MISC_PREOPEN_REPAINT: '1'
+        PAGE_MISC_PREOPEN_VERIFY: '0'
+        PAGE_MISC_SKIP_OPEN: '0'
+        PAGE_MISC_PROBE_CACHED: '0'
+        PAGE_MISC_RESTORE_ON_OPEN_FAIL: '1'
+        FAKE_FOPS_OPEN_NULL: '0'
+        FAKE_FOPS_RELEASE_NULL: '0'
+        PSELECT_WRITE_SHAPE: '1'
+        STAMP_ARM_CONSUMER: '1'
+        STAMP_FILL: scan
+        STAMP_SCAN: '0'
+        STAMP_FORGE_OFF: '120'
+        STAMP_FORGE_STEP: '8'
+        STAMP_REUSE_PAGE: '1'
+        STAMP_WARM_USEC: '50000'
+        STAMP_HOLD_USEC: '80000'
+        STAMP_CONSUMER_DELAY_USEC: '0'
+        STAMP_ATTEMPTS: '1'
+        PSELECT_CONSUMER_NICE: '19'
+        CONSUMER_POLICY_TOGGLE: '0'
+        CONSUMER_MAX_CALLS: '1'
+        PSELECT_CONSUMER_BURST_CALLS: '1'
+        CONSUMER_VERBOSE: '0'
+        ROUTE_THREAD_WAIT_MSEC: '5000'
+        PAGE_PIPE_STAGE_DEBUG: '1'
+        PAGE_PIPE_CACHE_DEBUG: '1'
+        ROOT_SKIP_WALLPAPER: '1'
+        SU_DAEMON_WATCH_SECS: '8'
+      xingc_patch_profile: x100
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivopd2339:
+    brand: vivo
+    display_name: iQOO Neo9S Pro (PD2339)
+    match:
+      brand: vivo
+      model:
+      - v2339a
+      - pd2339
+    resources:
+      preload: builtin:pd2339_mt6989_truephone
+      su_path: /apex/com.android.virt/bin/su
+      preload_trigger: /system/bin/id
+      preload_env:
+        STACK_STAMP: socket
+        PAGE_RECLAIM_VIA: filemap
+        PAGE_FILEMAP_PAGES: '4096'
+        PAGE_FILEMAP_ATTEMPTS: '64'
+        PAGE_WRITE_SELINUX: '0'
+        PAGE_WRITE_CANARY: '0'
+        PAGE_WRITE_MISC_FOPS: '1'
+        PAGE_MISC_PREOPEN_REPAINT: '1'
+        PAGE_MISC_PROBE_CACHED: '0'
+        PAGE_MISC_RESTORE_ON_OPEN_FAIL: '1'
+        PAGE_PIPE_STAGE_DEBUG: '1'
+        PAGE_PIPE_CACHE_DEBUG: '1'
+        STAMP_ARM_CONSUMER: '1'
+        STAMP_FILL: scan
+        STAMP_ATTEMPTS: '1'
+        CONSUMER_MAX_CALLS: '1'
+        PSELECT_CONSUMER_BURST_CALLS: '1'
+        CONSUMER_VERBOSE: '0'
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivodpd2329:
+    brand: vivo
+    display_name: vivo Pad3 Pro / iQOO Pad2 Pro (DPD2329)
+    match:
+      brand: vivo
+      model:
+      - pa2473
+      - ipa2475
+      - dpd2329
+      - vivo pad3 pro
+      - iqoo pad2 pro
+    resources:
+      preload: builtin:dpd2329_mt6989_gki61_5b0f71af
+      su_path: /data/local/tmp/su
+      preload_trigger: /system/bin/id
+      preload_clean_env: true
+      preload_env:
+        PATH: /system/bin:/system_ext/bin:/vendor/bin
+        HOME: /data/local/tmp
+        TMPDIR: /data/local/tmp
+        PRELOAD_LOG_DIR: /data/local/tmp
+        PRELOAD_LOG_HOST_MIRROR: '1'
+        TRACEFS_KPTR_OFF: '0x2EFC6C'
+        KASLR_ONLY: '0'
+        STACK_STAMP: socket
+        PAGE_RECLAIM_VIA: filemap
+        PAGE_FILEMAP_DIR: /data/local/tmp
+        PAGE_FILEMAP_PAGES: '4096'
+        PAGE_FILEMAP_MIN_SLOTS: '8'
+        PAGE_FILEMAP_ATTEMPTS: '64'
+        PAGE_RECLAIM_SKB_ALSO: '0'
+        PAGE_RECLAIM_SKB_FALLBACK: '0'
+        PAGE_CLOSE_ALL_POST: '0'
+        PAGE_CLOSE_ALL_SPRAY: '0'
+        PAGE_PHYS_OFFSET_ALLOW_400M_FALLBACK: '1'
+        PAGE_REQUIRE_PAINT: '1'
+        PAGE_DATA_PHYSMAP: '0'
+        PAGE_WRITE_CANARY: '0'
+        PAGE_WRITE_SELINUX: '0'
+        PAGE_WRITE_MISC_FOPS: '1'
+        PAGE_WRITE_FILE_FOP: '0'
+        PAGE_WRITE_ASHMEM_ITER: '0'
+        PAGE_WRITE_PIPEFIFO: '0'
+        PAGE_WRITE_FAKE_FOPS: '0'
+        PAGE_MISC_DEVICE: ashmem
+        PAGE_MISC_FOPS_VALUE_DELTA: '0'
+        PAGE_MISC_PREOPEN_REPAINT: '1'
+        PAGE_MISC_PREOPEN_VERIFY: '0'
+        PAGE_MISC_SKIP_OPEN: '0'
+        PAGE_MISC_PROBE_CACHED: '0'
+        PAGE_MISC_RESTORE_ON_OPEN_FAIL: '1'
+        FAKE_FOPS_OPEN_NULL: '0'
+        FAKE_FOPS_RELEASE_NULL: '0'
+        PSELECT_WRITE_SHAPE: '1'
+        STAMP_ARM_CONSUMER: '1'
+        STAMP_FILL: scan
+        STAMP_SCAN: '0'
+        STAMP_FORGE_OFF: '120'
+        STAMP_FORGE_STEP: '8'
+        STAMP_REUSE_PAGE: '1'
+        STAMP_WARM_USEC: '50000'
+        STAMP_HOLD_USEC: '80000'
+        STAMP_CONSUMER_DELAY_USEC: '0'
+        STAMP_ATTEMPTS: '1'
+        PSELECT_CONSUMER_NICE: '19'
+        CONSUMER_POLICY_TOGGLE: '0'
+        CONSUMER_MAX_CALLS: '1'
+        PSELECT_CONSUMER_BURST_CALLS: '1'
+        CONSUMER_VERBOSE: '0'
+        ROUTE_THREAD_WAIT_MSEC: '5000'
+        PAGE_PIPE_STAGE_DEBUG: '1'
+        PAGE_PIPE_CACHE_DEBUG: '1'
+        ROOT_SKIP_WALLPAPER: '1'
+        SU_DAEMON_WATCH_SECS: '8'
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot
+  vivopd2502:
+    brand: vivo
+    display_name: vivo X300 Pro (PD2502 / MT6993)
+    match:
+      brand: vivo
+      model:
+      - v2502a
+      - pd2502
+      - x300 pro
+    resources:
+      preload: builtin:pd2502_mt6993_abce62cfa4
+      preload_mode: exec
+      preload_args:
+      - --full
+      su_path: /data/local/tmp/cathash_su
+    partitions:
+      backup:
+      - lk
+      - init_boot
+      - vendor_boot
+      slot_suffix: true
+      names:
+        lk: lk
+        init_boot: init_boot
+        vendor_boot: vendor_boot

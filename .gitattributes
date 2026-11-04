@@ -1,0 +1,18 @@
+# Keep project text deterministic across Windows and Linux builds.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Preserve pinned runtime and packaged assets byte-for-byte.
+misc/** binary
+platform-tools/** binary
+sakisu/** binary
+*.dll binary
+*.exe binary
+*.img binary
+*.bin binary
+*.so binary
+*.png binary
+
+# Imported upstream sources intentionally contain upstream whitespace.
+native/preload_wrapper/vendor/** -whitespace

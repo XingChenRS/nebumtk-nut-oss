@@ -1,0 +1,32 @@
+{
+  "patcher": {
+    "elf": {
+      "class": 64,
+      "endianness": "little",
+      "machine": "AArch64",
+      "type": "DYN"
+    },
+    "interface": "ksud-boot-patch-v4",
+    "member": "lib/arm64-v8a/libksud.so",
+    "sha256": "53e432f1b2d2b1ac1cfc69a6fbdeddc1e91ce148ed77dc20ceb0afcba7991dd4",
+    "size": 4727056,
+    "supported_kmis": [
+      "android12-5.10",
+      "android13-5.10",
+      "android13-5.15",
+      "android14-5.15",
+      "android14-6.1",
+      "android15-6.6",
+      "android16-6.12"
+    ]
+  },
+  "schema_version": 1,
+  "upstream": {
+    "apk_sha256": "269f43a4232eacc3dcff657e7a9e1de1697e0e9732b032aa63c3034bc5b3a0ea",
+    "apk_size": 8486473,
+    "asset_name": "SakiSU_v4.3.0-sakisu.1_35039-arm64-v8a-release.apk",
+    "certificate_sha256": "f5391718452b269336a4cf0077b2fc4f9ae91253f061126a2708d5017134287c",
+    "repository": "XingChenRS/SakiSU",
+    "tag": "v4.3.0-sakisu.1"
+  }
+}

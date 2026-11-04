@@ -1,0 +1,34 @@
+[project]
+name = "nebumtk-unlock-tools"
+version = "2.0.0"
+description = "NEBUMTK Bootloader unlock tool for MediaTek v6 devices (open source)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "PySide6==6.10.2",
+    "PyYAML==6.0.3",
+    "cryptography==48.0.1",
+    "pyusb==1.3.1",
+    "libusb==1.0.29",
+    "pyasn1==0.6.1",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest==9.0.2",
+]
+
+[project.scripts]
+nebumtk = "nebumtk_unlock_tools.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["nebumtk_unlock_tools*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["workspace", "dist", "dist-win", "local-dev", "material", "preloads"]

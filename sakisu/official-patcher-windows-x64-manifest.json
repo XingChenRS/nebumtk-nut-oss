@@ -1,0 +1,72 @@
+{
+  "embedded_assets": [
+    {
+      "name": "android12-5.10_kernelsu.ko",
+      "sha256": "a41195080a91c9f5f67155e4596b05b33196c799a10e36d6493bbbc6ef3f9a40",
+      "size": 391352
+    },
+    {
+      "name": "android13-5.10_kernelsu.ko",
+      "sha256": "4e1e057b1b7b612b1990c4a379c7fee379db6e9ea618d7044315abde491d4177",
+      "size": 382056
+    },
+    {
+      "name": "android13-5.15_kernelsu.ko",
+      "sha256": "8f5420bbaff355c9d46d7f44576980640e55a990f5abd8a5a27d69084af55d2b",
+      "size": 413448
+    },
+    {
+      "name": "android14-5.15_kernelsu.ko",
+      "sha256": "e1d1f7e3676c82169e57ca7c932a04a3f017ca72e422f124f4a84a9249695933",
+      "size": 535136
+    },
+    {
+      "name": "android14-6.1_kernelsu.ko",
+      "sha256": "bb57db115eb51645b498d33897b1f572870dba470651ada224a2e26338d018a0",
+      "size": 440360
+    },
+    {
+      "name": "android15-6.6_kernelsu.ko",
+      "sha256": "51289c33e59dc45b03c0f945126170cfba68f2a6444b098033367e14a4b7dd30",
+      "size": 344024
+    },
+    {
+      "name": "android16-6.12_kernelsu.ko",
+      "sha256": "221ea2645013c4e2dfd627b4bb1b1542f67598ff2473d9616d567c6c7a3ee088",
+      "size": 415720
+    },
+    {
+      "name": "ksuinit",
+      "sha256": "de7a913cefd5c6683ab38f3e8bf8732c6b4b5c5baa683b59c4297c9c49dfe02a",
+      "size": 425584
+    }
+  ],
+  "patcher": {
+    "crt": "static",
+    "executable": {
+      "format": "PE32+",
+      "machine": "AMD64"
+    },
+    "file": "official-patcher-windows-x64.exe",
+    "interface": "ksud-boot-patch-v4",
+    "rustc": "1.94.0 (4a4ef493e 2026-03-02)",
+    "sha256": "1b8a6100b301700ec00b3c78f5afcab953960a30322b9f1479f283abb95805b3",
+    "size": 3819520,
+    "supported_kmis": [
+      "android12-5.10",
+      "android13-5.10",
+      "android13-5.15",
+      "android14-5.15",
+      "android14-6.1",
+      "android15-6.6",
+      "android16-6.12"
+    ],
+    "target": "x86_64-pc-windows-msvc"
+  },
+  "schema_version": 1,
+  "upstream": {
+    "repository": "XingChenRS/SakiSU",
+    "source_commit": "6f9672837b9359f8853f47e18e00261edbf6d31e",
+    "tag": "v4.3.0-sakisu.1"
+  }
+}
