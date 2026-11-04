@@ -103,8 +103,20 @@ if (-not (Test-Path $ExePath)) {
     exit 1
 }
 
+# AGPL 4/6: convey the licence and the notices with the binary, and keep the
+# provenance mark inside the executable (the audit checks for it).
+$DistributionDir = Split-Path $ExePath -Parent
+foreach ($LicenseFile in @("LICENSE", "NOTICE.md")) {
+    $LicenseSource = Join-Path $Root $LicenseFile
+    if (-not (Test-Path -LiteralPath $LicenseSource)) {
+        Write-Host "missing $LicenseFile; a conveyed binary must ship its licence" -ForegroundColor Red
+        exit 1
+    }
+    Copy-Item -LiteralPath $LicenseSource -Destination (Join-Path $DistributionDir $LicenseFile) -Force
+}
+
 $PlatformToolsSource = Join-Path $Root "platform-tools"
-$PlatformToolsTarget = Join-Path (Split-Path $ExePath -Parent) "platform-tools"
+$PlatformToolsTarget = Join-Path $DistributionDir "platform-tools"
 if (-not (Test-Path (Join-Path $PlatformToolsSource "adb.exe")) -or
     -not (Test-Path (Join-Path $PlatformToolsSource "fastboot.exe"))) {
     Write-Host "platform-tools source is missing adb.exe or fastboot.exe" -ForegroundColor Red

@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>
 # SPDX-License-Identifier: AGPL-3.0-only
 """Generic partition operations: read the list, back a selection up, or run an
 operator-built checklist against one confirmed device.

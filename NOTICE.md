@@ -8,6 +8,14 @@ version 3.0 only** 授权。全文见 [LICENSE](LICENSE)。
 
 `only` 是刻意的：不附加"或任何更高版本"。
 
+```
+Copyright (c) 2026 雾月星辰 & MLXC <github@XingChenRS>
+SPDX-License-Identifier: AGPL-3.0-only
+Provenance token: NBMTK-canary-7f3a91c4e8b2d05f
+```
+
+逐文件声明、token 与取证流程见 [docs/PROVENANCE.md](docs/PROVENANCE.md)。
+
 分发或提供网络服务时必须满足 AGPL §4–§6 与 §13：随二进制提供完整对应源码（或书面
 要约），并以同一许可授权衍生作品；把它包成在线服务同样要提供源码。
 

@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>
 # SPDX-License-Identifier: AGPL-3.0-only
 """Fail a release build if protected sources or release files are invalid."""
 
@@ -41,9 +42,17 @@ FORBIDDEN_ROOT_PATH_PARTS = {"ksu", "kernelsu", "sukisu", "magisk", "resukisu"}
 FORBIDDEN_REMOVED_COMPONENT_PATH_PARTS = {"scrcpy"}
 SOURCE_NAMES = ("verify_private.pem", "verify_public.avbpub", "xingc_vivo.json")
 MANIFEST_NAME = "release-sha256-manifest.json"
+# Compiled from nebumtk_unlock_tools.PROVENANCE_MARK; a build that strips the
+# notice stops carrying it, and that is a licence violation rather than a taste
+# preference (AGPL 5 requires notices to survive conveyance).
+PROVENANCE_MARKER = b"NEBUMTK-PROVENANCE::AGPL-3.0-only"
+MAIN_EXECUTABLE = "NEBUMTK_UNLOCK_TOOLS.exe"
 FILE_ATTRIBUTE_REPARSE_POINT = 0x400
 BASE_REQUIRED_RELEASE_FILES = (
     "NEBUMTK_UNLOCK_TOOLS.exe",
+    # AGPL 4/6: a conveyed binary ships with its licence and notices.
+    "LICENSE",
+    "NOTICE.md",
     "platform-tools/adb.exe",
     "platform-tools/fastboot.exe",
     "nebumtk_unlock_tools/lk/libusb/_platform/_windows/x64/libusb-1.0.dll",
@@ -277,6 +286,16 @@ def audit_distribution(root: Path) -> None:
             violations.append(f"private-key marker: {path}")
         if any(source in data for source in protected_sources):
             violations.append(f"plaintext protected source: {path}")
+    if not root.is_file() and (root / MAIN_EXECUTABLE).is_file():
+        try:
+            executable = (root / MAIN_EXECUTABLE).read_bytes()
+        except OSError:
+            executable = b""
+        if PROVENANCE_MARKER not in executable:
+            violations.append(
+                "built executable lost the project provenance mark "
+                f"({PROVENANCE_MARKER.decode('ascii')}); AGPL 5 forbids stripping notices"
+            )
     if not root.is_file() and ((root / MANIFEST_NAME).is_file() or any(root.glob("*.exe"))):
         _audit_platform_tools(root, violations)
         _audit_release_manifest(root, violations)

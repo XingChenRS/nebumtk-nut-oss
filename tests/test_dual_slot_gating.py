@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>
 # SPDX-License-Identifier: AGPL-3.0-only
 """Dual-slot LK sync is offered per brand, and only in the right direction.
 

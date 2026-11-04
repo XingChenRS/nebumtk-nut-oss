@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>
 # SPDX-License-Identifier: AGPL-3.0-only
 """Typed destructive UI request bound to immutable local-file facts."""
 

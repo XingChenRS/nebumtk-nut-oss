@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>
 # SPDX-License-Identifier: AGPL-3.0-only
 from __future__ import annotations
 
@@ -18,7 +19,14 @@ audit_distribution = audit_module.audit_distribution
 
 
 def _write_release_fixture(root: Path) -> None:
-    (root / "NEBUMTK_UNLOCK_TOOLS.exe").write_bytes(b"exe")
+    import nebumtk_unlock_tools as nut
+
+    # The build must keep the provenance mark inside the executable.
+    (root / "NEBUMTK_UNLOCK_TOOLS.exe").write_bytes(
+        b"MZ" + nut.PROVENANCE_MARK.encode("utf-8") + bytes(32)
+    )
+    (root / "LICENSE").write_bytes(b"GNU AFFERO GENERAL PUBLIC LICENSE")
+    (root / "NOTICE.md").write_bytes(b"licence map")
     platform_tools = root / "platform-tools"
     platform_tools.mkdir()
     (platform_tools / "adb.exe").write_bytes(b"adb")
@@ -226,3 +234,23 @@ def test_smoke_test_script_imports_project_package_from_project_root() -> None:
     )
     assert result.returncode == 0, result.stderr
     assert "ModuleNotFoundError" not in result.stderr
+
+
+def test_distribution_audit_requires_the_provenance_mark_in_the_executable(
+    tmp_path: Path,
+) -> None:
+    _write_release_fixture(tmp_path)
+    (tmp_path / "NEBUMTK_UNLOCK_TOOLS.exe").write_bytes(b"MZ" + bytes(64))
+    audit_module.write_release_manifest(tmp_path)
+
+    with pytest.raises(RuntimeError, match="provenance mark"):
+        audit_distribution(tmp_path)
+
+
+def test_distribution_audit_requires_the_conveyed_licence(tmp_path: Path) -> None:
+    _write_release_fixture(tmp_path)
+    (tmp_path / "LICENSE").unlink()
+    audit_module.write_release_manifest(tmp_path)
+
+    with pytest.raises(RuntimeError, match="required file"):
+        audit_distribution(tmp_path)
