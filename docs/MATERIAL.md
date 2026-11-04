@@ -25,7 +25,7 @@ material/
     verify-private.pem         # Xingc 签名私钥
     verify-public.avbpub       # 与私钥配套的 AVB public key blob（520 字节）
     patch-catalog.json         # 已审核的 LK 补丁目录
-  sakisu/                      # 上游项目 SakiSU 的产物（见第 3.3 节）
+  sakisu/                      # 上游项目 SakiSU 的产物（见第 2.1 节）
     official-patcher-arm64
     official-patcher-manifest.json
     official-patcher-windows-x64.exe
