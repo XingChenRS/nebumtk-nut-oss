@@ -15,6 +15,7 @@ version 3.0 only** 授权。全文见 [LICENSE](LICENSE)。
 
 | 路径 | 组件 | 许可 | 与 AGPL 的关系 |
 |---|---|---|---|
+| `nebumtk_unlock_tools/lk/vendor/` | libLK（LK 镜像解析与证书处理），© 2025-2026 Roger Ortiz | **GPL-3.0-or-later**（文件头已带 SPDX，保持原样） | AGPL §13 明文允许与 GPLv3 作品合并分发；GPL 部分继续按 GPL 授权，合并作品的网络条款按 AGPL 执行。**不能把它改成 AGPL 头** |
 | `native/preload_wrapper/vendor/monocypher/` | Monocypher（X25519 / XChaCha20-Poly1305 / BLAKE2b） | BSD-2-Clause / CC0-1.0 双许可 | 宽松许可，可并入 AGPL 作品；保留其版权与许可声明 |
 | `native/preload_wrapper/vendor/pycryptodome/src/` | PyCryptodome 的 AES / GHASH / SHA-256 单文件实现 | Public Domain | 无冲突 |
 | `platform-tools/` | Android SDK Platform Tools（adb / fastboot 等） | Android SDK 条款（随附 `NOTICE.txt`、`source.properties`） | **独立聚合**：放进本仓库不改变其许可，再分发需遵守 SDK 条款 |
