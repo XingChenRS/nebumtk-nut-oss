@@ -1,0 +1,33 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from enum import StrEnum
+
+
+class ActivityKind(StrEnum):
+    IDLE = "idle"
+    RUNNING = "running"
+    WAITING = "waiting"
+    SUCCESS = "success"
+    CANCELLED = "cancelled"
+    TIMEOUT = "timeout"
+    ERROR = "error"
+
+
+class WaitTarget(StrEnum):
+    FASTBOOT = "fastboot"
+    FASTBOOTD = "fastbootd"
+    BOOTLOADER = "bootloader"
+    ANDROID_READY = "android_ready"
+    REBOOT_TARGET = "reboot_target"
+
+
+@dataclass(frozen=True)
+class ActivityEvent:
+    kind: ActivityKind
+    title: str
+    detail: str = ""
+    deadline: float | None = None
+    target: WaitTarget | None = None
+    serial: str = ""
+    expected_mode: str = ""

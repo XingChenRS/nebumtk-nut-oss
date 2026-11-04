@@ -1,0 +1,67 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.pytest-unused/
+.pytest-*/
+.pytest-basetemp/
+.test-tmp*/
+.test-appdata/
+.test-workspace/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Nuitka and release outputs
+dist/
+build/
+*.build/
+*.dist/
+*.onefile-build/
+nuitka-crash-report.xml
+release-sha256-manifest.json
+
+# Runtime and device-specific state
+workspace/
+workspace-*/
+*.log
+*.tmp
+*.bak
+
+# Local agent and IDE state
+.claude/
+.superpowers/
+.idea/
+.vscode/
+
+# Operator material: nothing here is distributed (see docs/MATERIAL.md)
+material/
+preloads/
+xingc_sources/
+lk_sources/
+models/
+local-dev/
+.private/
+server-data/
+sakisu_sources/
+.build-log.txt
+
+# Local secrets and signing material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
