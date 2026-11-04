@@ -114,10 +114,24 @@ def audit_self(root: Path) -> list[str]:
         licence = ""
     if "GNU AFFERO GENERAL PUBLIC LICENSE" not in licence:
         violations.append("LICENSE no longer carries the AGPL text")
-    if "雾月星辰 & MLXC" not in licence:
-        violations.append("LICENSE lost the copyright notice")
-    if nut.PROVENANCE_TOKEN not in licence:
-        violations.append("LICENSE lost the provenance token")
+    if "Copyright (c)" in licence:
+        violations.append(
+            "LICENSE carries a header again; licence scanners stop recognising "
+            "AGPL-3.0 - attribution belongs in COPYRIGHT"
+        )
+
+    copyright_path = root / "COPYRIGHT"
+    try:
+        notice = copyright_path.read_text(encoding="utf-8")
+    except OSError:
+        violations.append("COPYRIGHT is missing")
+        notice = ""
+    if "雾月星辰 & MLXC" not in notice:
+        violations.append("COPYRIGHT lost the copyright notice")
+    if nut.PROVENANCE_TOKEN not in notice:
+        violations.append("COPYRIGHT lost the provenance token")
+    if "AGPL-3.0-only" not in notice:
+        violations.append("COPYRIGHT lost the licence identifier")
 
     for relative in ("README.md", "NOTICE.md", "docs/PROVENANCE.md"):
         path = root / relative

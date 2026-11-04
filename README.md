@@ -128,7 +128,7 @@ Provenance token: NBMTK-canary-7f3a91c4e8b2d05f
 ## 许可
 
 本项目代码以 **GNU Affero General Public License v3.0（only）** 发布——强著佐权，不是
-宽松许可。全文见 [LICENSE](LICENSE)。
+宽松许可。全文见 [LICENSE](LICENSE)；署名与溯源标记见 [COPYRIGHT](COPYRIGHT)。
 
 对使用者的实际含义：
 

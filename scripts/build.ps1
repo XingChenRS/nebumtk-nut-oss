@@ -106,7 +106,7 @@ if (-not (Test-Path $ExePath)) {
 # AGPL 4/6: convey the licence and the notices with the binary, and keep the
 # provenance mark inside the executable (the audit checks for it).
 $DistributionDir = Split-Path $ExePath -Parent
-foreach ($LicenseFile in @("LICENSE", "NOTICE.md")) {
+foreach ($LicenseFile in @("LICENSE", "COPYRIGHT", "NOTICE.md")) {
     $LicenseSource = Join-Path $Root $LicenseFile
     if (-not (Test-Path -LiteralPath $LicenseSource)) {
         Write-Host "missing $LicenseFile; a conveyed binary must ship its licence" -ForegroundColor Red

@@ -52,6 +52,7 @@ BASE_REQUIRED_RELEASE_FILES = (
     "NEBUMTK_UNLOCK_TOOLS.exe",
     # AGPL 4/6: a conveyed binary ships with its licence and notices.
     "LICENSE",
+    "COPYRIGHT",
     "NOTICE.md",
     "platform-tools/adb.exe",
     "platform-tools/fastboot.exe",
