@@ -14,6 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 Provenance token: NBMTK-canary-7f3a91c4e8b2d05f
 ```
 
+`LICENSE` 保持 AGPL 原文（便于许可扫描器识别），署名正文在 `COPYRIGHT`。
 逐文件声明、token 与取证流程见 [docs/PROVENANCE.md](docs/PROVENANCE.md)。
 
 分发或提供网络服务时必须满足 AGPL §4–§6 与 §13：随二进制提供完整对应源码（或书面

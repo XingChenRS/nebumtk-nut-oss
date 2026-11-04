@@ -25,6 +25,7 @@ def _write_release_fixture(root: Path) -> None:
     )
     (root / "LICENSE").write_bytes(b"GNU AFFERO GENERAL PUBLIC LICENSE")
     (root / "NOTICE.md").write_bytes(b"licence map")
+    (root / "COPYRIGHT").write_bytes(b"Copyright (c) 2026")
     platform_tools = root / "platform-tools"
     platform_tools.mkdir()
     (platform_tools / "adb.exe").write_bytes(b"adb")

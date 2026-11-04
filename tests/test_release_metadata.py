@@ -44,8 +44,12 @@ def test_the_licence_and_the_package_carry_the_provenance_marks() -> None:
 
     licence = (ROOT / "LICENSE").read_text(encoding="utf-8")
     assert "GNU AFFERO GENERAL PUBLIC LICENSE" in licence
-    assert nebumtk_unlock_tools.PROVENANCE_TOKEN in licence
-    assert "雾月星辰 & MLXC" in licence
+    assert "Copyright (c)" not in licence, "LICENSE must stay scanner-friendly"
+
+    notice = (ROOT / "COPYRIGHT").read_text(encoding="utf-8")
+    assert nebumtk_unlock_tools.PROVENANCE_TOKEN in notice
+    assert "雾月星辰 & MLXC" in notice
+    assert "AGPL-3.0-only" in notice
 
 
 def test_license_notice_is_printable_and_complete() -> None:
@@ -87,7 +91,7 @@ def test_provenance_gate_rejects_a_file_that_lost_its_header(tmp_path: Path) -> 
     assert any("missing licence header" in item for item in violations)
 
 
-@pytest.mark.parametrize("name", ("LICENSE", "docs/PROVENANCE.md"))
+@pytest.mark.parametrize("name", ("COPYRIGHT", "docs/PROVENANCE.md"))
 def test_provenance_gate_rejects_a_missing_document(tmp_path: Path, name: str) -> None:
     (tmp_path / "nebumtk_unlock_tools").mkdir()
     (tmp_path / "nebumtk_unlock_tools" / "__init__.py").write_text(

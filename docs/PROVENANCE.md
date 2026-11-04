@@ -9,7 +9,7 @@
 |---|---|---|
 | 每个第一方 `.py` 前两行 | `SPDX-FileCopyrightText: 2026 雾月星辰 & MLXC <github@XingChenRS>` + `SPDX-License-Identifier: AGPL-3.0-only` | 逐文件归属，REUSE 兼容；删掉即失去合法副本身份 |
 | 每个第一方 `.py` 末行 | `# provenance: NBMTK-canary-7f3a91c4e8b2d05f` | 文件级水印：整文件照搬（最常见）会带着它；删头和删它要动每一处 |
-| `LICENSE` 开头 | 版权行 + "section 5 requires all notices to be kept" + 溯源 token | 许可正文里的第一道署名 |
+| `COPYRIGHT` | 版权行 + 上游地址 + SPDX + 溯源 token + "§5 要求保留声明" | 署名文件；`LICENSE` 只放 AGPL 原文，保持扫描器可识别 |
 | `nebumtk_unlock_tools/__init__.py` | `PROVENANCE_MARK`、`PROVENANCE_TOKEN`、`license_notice()`、`check_provenance()` | 代码内的机器可读标记，并随编译进二进制 |
 | `python -m nebumtk_unlock_tools --license` | 打印 banner（含 token 与版权行） | 把声明变成**可观测行为**：删掉标记的改版连这条命令都答不出来 |
 | `README.md`、`NOTICE.md`、本文件 | token 明文 | 抄文档也会带走 token |
